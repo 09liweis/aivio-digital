@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { translations } from '../../i18n';
 
 const { lang } = Astro.params;
@@ -16,9 +14,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={currentLang === 'zh' ? 'Google 广告审计 | Aivio Digital' : 'Google Ads Audit | Aivio Digital'} lang={currentLang}>
-  <Header currentLang={currentLang} currentPath={currentPath} />
-
+<Layout title={currentLang === 'zh' ? 'Google 广告审计 | Aivio Digital' : 'Google Ads Audit | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
@@ -232,8 +228,6 @@ export function getStaticPaths() {
       </div>
     </section>
   </main>
-
-  <Footer currentLang={currentLang} />
 </Layout>
 
 <style>

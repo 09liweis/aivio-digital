@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import HowItWorks from '../components/HowItWorks.astro';
@@ -24,9 +22,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={currentLang === 'zh' ? '首页 | Aivio Digital' : 'Home | Aivio Digital'} lang={currentLang}>
-  <Header currentLang={currentLang} currentPath={currentPath} />
-
+<Layout title={currentLang === 'zh' ? '首页 | Aivio Digital' : 'Home | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main>
     <Hero currentLang={currentLang} />
     <Services currentLang={currentLang} />
@@ -36,8 +32,6 @@ export function getStaticPaths() {
     <FinalCTA currentLang={currentLang} />
     <FAQs currentLang={currentLang} />
   </main>
-
-  <Footer currentLang={currentLang} />
 </Layout>
 
 <style>
