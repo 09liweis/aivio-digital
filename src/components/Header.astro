@@ -11,7 +11,7 @@ const t = translations[currentLang as keyof typeof translations];
 const basePath = currentLang === 'en' ? 'en' : `${currentLang}`;
 
 const menuItems = [
-  { key: 'home', href: currentLang === 'en' ? '/' : '/zh' },
+  // { key: 'home', href: currentLang === 'en' ? '/en' : '/zh' },
   { key: 'googleAdsAudit', href: `/${basePath}/google-ads-audit` },
   { key: 'googleAdsManagement', href: `/${basePath}/google-ads-management` },
   { key: 'caseStudy', href: `/${basePath}/case-study` },
@@ -20,9 +20,6 @@ const menuItems = [
 ];
 
 const isActive = (href: string) => {
-  if (currentPath === '/') {
-    return href === '/';
-  }
   return currentPath.startsWith(href);
 };
 ---
@@ -46,7 +43,7 @@ const isActive = (href: string) => {
 <header class="bg-white shadow-md sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex justify-between items-center">
-      <a href={currentLang === 'en' ? '/' : '/zh'} class="text-2xl font-bold text-primary hover:text-blue-700 transition">
+      <a href={currentLang === 'en' ? '/en' : '/zh'} class="text-2xl font-bold text-primary hover:text-blue-700 transition">
         Aivio Digital
       </a>
       
