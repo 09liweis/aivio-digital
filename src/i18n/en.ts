@@ -109,6 +109,40 @@ export const en = {
   footer: {
     copyright: '© 2025 Aivio Digital. All rights reserved.',
   },
+  aboutUs: {
+    hero: {
+      title: 'We Help Businesses Grow with Smart Google Ads',
+      description: 'At Aivio Digital, we specialize in Google Ads management and optimization, helping small and medium-sized businesses get more leads, better ROI, and clearer results from their ad spend. We understand that running Google Ads can be complex and confusing, and many businesses waste budget on campaigns that don\'t deliver. That\'s why we focus on data-driven strategies, clear reporting, and results that matter.',
+    },
+    ourStory: {
+      title: 'Our Story',
+      description: 'Founded by a team of digital marketing and analytics experts, Aivio Digital was built on the principle of transparency and measurable success. We\'ve worked with businesses across industries, from custom packaging to printing services, helping them turn clicks into meaningful leads.',
+    },
+    ourApproach: {
+      title: 'Our Approach',
+      description: 'We believe that every dollar in your ad budget should work for you. Our approach includes:',
+      audit: 'Audit & Analysis: Understand what\'s working, what\'s wasting budget, and where improvements can be made.',
+      strategy: 'Strategy & Setup: Optimize campaigns, ad copy, keywords, and landing pages for maximum impact.',
+      management: 'Management & Optimization: Continuously improve lead quality, conversion rates, and ROI.',
+      note: 'No long-term contracts, no hidden fees — just clear guidance and results-driven strategies.',
+    },
+    whyChooseUs: {
+      title: 'Why Clients Choose Us',
+      expertise: 'Expertise: Certified Google Ads professionals with proven results.',
+      transparency: 'Transparency: Clear reporting and recommendations every step of the way.',
+      personalized: 'Personalized Service: Campaigns tailored to your goals, industry, and budget.',
+      results: 'Results-Oriented: We focus on quality leads, not just clicks.',
+    },
+    ourMission: {
+      title: 'Our Mission',
+      description: 'To help businesses make every ad dollar count, grow sustainably, and take the guesswork out of online advertising.',
+    },
+    ready: {
+      title: 'Ready to Grow Your Business?',
+      description: 'Whether you need a Google Ads Audit or ongoing management, we\'re here to help.',
+      button: 'Talk to a Google Ads Expert',
+    },
+  },
   googleAdsAudit: {
     hero: {
       title: 'Find What\'s Broken. Stop Wasting Budget. Get Clarity.',

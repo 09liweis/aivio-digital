@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../i18n';
+
+const { lang } = Astro.params;
+const currentLang = (lang || 'en') as 'en' | 'zh';
+const currentPath = Astro.url.pathname;
+const t = translations[currentLang].aboutUs;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+---
+
+<Layout title={currentLang === 'zh' ? '关于我们 | Aivio Digital' : 'About Us | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {t.hero.title}
+        </h1>
+        <p class="text-xl text-blue-100 leading-relaxed">
+          {t.hero.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          {t.ourStory.title}
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed text-center">
+          {t.ourStory.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          {t.ourApproach.title}
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 text-center">
+          {t.ourApproach.description}
+        </p>
+        <ul class="space-y-6 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ourApproach.audit}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ourApproach.strategy}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ourApproach.management}</span>
+          </li>
+        </ul>
+        <p class="text-lg text-gray-600 mt-8 italic text-center">
+          {t.ourApproach.note}
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Clients Choose Us -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          {t.whyChooseUs.title}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyChooseUs.expertise}
+            </h3>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyChooseUs.transparency}
+            </h3>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyChooseUs.personalized}
+            </h3>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyChooseUs.results}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          {t.ourMission.title}
+        </h2>
+        <p class="text-xl text-gray-700 leading-relaxed text-center">
+          {t.ourMission.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Ready CTA -->
+    <section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {t.ready.title}
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          {t.ready.description}
+        </p>
+        <a
+          href={`mailto:hello@aivio.digital?subject=Talk to Google Ads Expert`}
+          class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg shadow-md hover:shadow-lg"
+        >
+          {t.ready.button}
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>

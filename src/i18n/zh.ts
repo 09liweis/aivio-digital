@@ -109,6 +109,40 @@ export const zh = {
   footer: {
     copyright: '© 2025 Aivio Digital。版权所有。',
   },
+  aboutUs: {
+    hero: {
+      title: '我们通过智能 Google 广告帮助企业成长',
+      description: '在 Aivio Digital，我们专注于 Google 广告管理和优化，帮助中小企业从广告支出中获得更多潜在客户、更好的投资回报率和更清晰的结果。我们理解运行 Google 广告可能复杂且令人困惑，许多企业在不提供结果的广告活动上浪费预算。这就是为什么我们专注于数据驱动的策略、清晰的报告和重要的结果。',
+    },
+    ourStory: {
+      title: '我们的故事',
+      description: '由数字营销和分析专家团队创立，Aivio Digital 建立在透明和可衡量成功的原则之上。我们与各行业的企业合作，从定制包装到印刷服务，帮助他们将点击转化为有意义的潜在客户。',
+    },
+    ourApproach: {
+      title: '我们的方法',
+      description: '我们相信您的广告预算中的每一美元都应该为您工作。我们的方法包括：',
+      audit: '审计与分析：了解什么有效、什么在浪费预算以及可以进行改进的地方。',
+      strategy: '策略与设置：优化广告活动、广告文案、关键词和着陆页以获得最大影响。',
+      management: '管理与优化：持续提高潜在客户质量、转化率和投资回报率。',
+      note: '无长期合同，无隐藏费用——只有清晰的指导和以结果为导向的策略。',
+    },
+    whyChooseUs: {
+      title: '客户为什么选择我们',
+      expertise: '专业知识：拥有经过验证结果的认证 Google 广告专业人士。',
+      transparency: '透明度：每一步都有清晰的报告和建议。',
+      personalized: '个性化服务：根据您的目标、行业和预算定制广告活动。',
+      results: '以结果为导向：我们专注于高质量的潜在客户，而不仅仅是点击。',
+    },
+    ourMission: {
+      title: '我们的使命',
+      description: '帮助企业让每一广告美元都有价值，可持续增长，并消除在线广告的猜测工作。',
+    },
+    ready: {
+      title: '准备好发展您的业务了吗？',
+      description: '无论您需要 Google 广告审计还是持续管理，我们都在这里为您提供帮助。',
+      button: '与 Google 广告专家交流',
+    },
+  },
   googleAdsAudit: {
     hero: {
       title: '发现问题，停止浪费，获得清晰洞察',
