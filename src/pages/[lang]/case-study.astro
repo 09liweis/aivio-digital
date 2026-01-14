@@ -1,0 +1,250 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { translations } from '../../i18n';
+
+const { lang } = Astro.params;
+const currentLang = (lang || 'en') as 'en' | 'zh';
+const currentPath = Astro.url.pathname;
+const t = translations[currentLang].caseStudy;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+---
+
+<Layout title={currentLang === 'zh' ? '案例分析 | Aivio Digital' : 'Case Study | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+  <main class="min-h-screen">
+    <!-- Hero / Title -->
+    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+          {t.title}
+        </h1>
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-4 text-sm md:text-base">
+            <div class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>{t.metadata.industry}</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0l4.244 4.243a8 8 0 010 11.314l-4.244 4.243a8 8 0 01-11.314 0l-4.244-4.243a8 8 0 010-11.314l4.244-4.243a8 8 0 0111.314 0l4.244 4.243a8 8 0 010 11.314l-4.244 4.243a8 8 0 01-11.314 0z"></path>
+              </svg>
+              <span>{t.metadata.location}</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 3 3 3 3 .895 3 2-1.343 3-3 3m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 1v8m0 1v8m0 1v8m0 1v8"></path>
+              </svg>
+              <span>{t.metadata.spend}</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V9a2 2 0 012-2m6 2v2m0-2v2m0 2v2"></path>
+              </svg>
+              <span>{t.metadata.type}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {t.background.title}
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          {t.background.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-16 px-4 bg-red-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          {t.challenge.title}
+        </h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-red-600 mr-3 mt-1">·</span>
+            <span>{t.challenge.point1}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-red-600 mr-3 mt-1">·</span>
+            <span>{t.challenge.point2}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-red-600 mr-3 mt-1">·</span>
+            <span>{t.challenge.point3}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-red-600 mr-3 mt-1">·</span>
+            <span>{t.challenge.point4}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-red-600 mr-3 mt-1">·</span>
+            <span>{t.challenge.point5}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Diagnosis & Findings -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {t.diagnosis.title}
+        </h2>
+        <p class="text-lg text-gray-700 mb-8">
+          {t.diagnosis.description}
+        </p>
+        <div class="space-y-6">
+          <div class="border-l-4 border-blue-600 pl-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.diagnosis.landingPage.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.diagnosis.landingPage.description}
+            </p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.diagnosis.trust.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.diagnosis.trust.description}
+            </p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.diagnosis.budget.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.diagnosis.budget.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optimization Strategy -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {t.optimization.title}
+        </h2>
+        <p class="text-lg text-gray-700 mb-8">
+          {t.optimization.description}
+        </p>
+        <div class="space-y-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+              {t.optimization.landingPage.title}
+            </h3>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">·</span>
+                <span>{t.optimization.landingPage.point1}</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 mr-3 mt-1">·</span>
+                <span>{t.optimization.landingPage.point2}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.optimization.faq.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.optimization.faq.description}
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.optimization.alignment.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.optimization.alignment.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results & Impact -->
+    <section class="py-16 px-4 bg-green-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          {t.results.title}
+        </h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-green-600 mr-3 mt-1">·</span>
+            <span>{t.results.point1}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-3 mt-1">·</span>
+            <span>{t.results.point2}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-3 mt-1">·</span>
+            <span>{t.results.point3}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-3 mt-1">·</span>
+            <span>{t.results.point4}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-3 mt-1">·</span>
+            <span>{t.results.point5}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Takeaway -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {t.takeaway.title}
+        </h2>
+        <p class="text-xl text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-6">
+          {t.takeaway.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {t.cta.title}
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          {t.cta.description}
+        </p>
+        <a
+          href={`/${currentLang === 'en' ? 'en' : 'zh'}/contact`}
+          class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg shadow-md hover:shadow-lg"
+        >
+          {t.cta.button}
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>

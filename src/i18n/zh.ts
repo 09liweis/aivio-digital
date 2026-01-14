@@ -109,6 +109,77 @@ export const zh = {
   footer: {
     copyright: '© 2025 Aivio Digital。版权所有。',
   },
+  caseStudy: {
+    title: '案例分析：多伦多定制包装公司的 Google 广告优化',
+    metadata: {
+      industry: '行业：定制包装（B2B）',
+      location: '地点：加拿大多伦多',
+      spend: '每月 Google 广告支出：~CA$500',
+      type: '广告活动类型：Google 搜索广告',
+    },
+    background: {
+      title: '背景',
+      description: '这家位于多伦多的定制包装公司为中小型企业提供按需解决方案。尽管运行 Google 搜索广告，但他们没有看到一致的咨询线索。业主不确定预算是否被有效使用。',
+    },
+    challenge: {
+      title: '挑战',
+      point1: '广告产生了点击，但咨询量不一致。',
+      point2: '着陆页内容最少，没有清楚地解释流程或价值。',
+      point3: '访问者经常离开页面而不提交表单。',
+      point4: '对用户为什么不转化的可见性有限。',
+      point5: '由于预算有限，每次点击都很重要，但网站没有优化以支持转化。',
+    },
+    diagnosis: {
+      title: '诊断和发现',
+      description: '在审查 Google 广告账户和着陆页后，识别了关键问题：',
+      landingPage: {
+        title: '1. 着陆页内容差距',
+        description: '缺乏清晰的价值主张、订单流程和目标受众解释。',
+      },
+      trust: {
+        title: '2. 信任和清晰度问题',
+        description: '没有关于最小起订量、时间表或定制选项的常见问题。',
+      },
+      budget: {
+        title: '3. 预算限制',
+        description: '每月只有 CA$500，提高转化质量比扩大流量更重要。',
+      },
+    },
+    optimization: {
+      title: '优化策略',
+      description: '重点在于改善点击后绩效，而不是增加广告支出。关键行动包括：',
+      landingPage: {
+        title: '着陆页优化',
+        point1: '重写关键部分以清楚地解释能力、目标客户和订单流程。',
+        point2: '改进标题清晰度以匹配搜索意图。',
+      },
+      faq: {
+        title: '添加常见问题部分',
+        description: '解决客户的顶级问题：最小订单、定制、时间表和行业用例。',
+      },
+      alignment: {
+        title: '改进广告和着陆页一致性',
+        description: '确保广告文案与更新的页面内容匹配，以减少困惑和低质量点击。',
+      },
+    },
+    results: {
+      title: '结果和影响',
+      point1: '在不增加广告支出的情况下获得更高质量的咨询。',
+      point2: '着陆页上的参与度提高。',
+      point3: '更少的低质量点击和有限预算上的更好投资回报率。',
+      point4: '企业主获得了信心和对潜在客户来源的清晰可见性。',
+      point5: '最重要的是，账户从"盲目投放广告"转变为拥有受控、有意的设置。',
+    },
+    takeaway: {
+      title: '关键要点',
+      description: '对于小预算 Google 广告账户，清晰度和转化质量比流量量更重要。优化着陆页内容并回答客户问题可以将有限的流量转化为有意义的咨询。',
+    },
+    cta: {
+      title: '想知道您的 Google 广告预算是否被有效使用吗？',
+      description: '如果您正在运行 Google 广告但不确定您的预算是否产生真正的业务结果，结构化的账户审计可以帮助识别改进最重要在哪里。',
+      button: '从 Google 广告账户审计开始',
+    },
+  },
   contactUs: {
     hero: {
       title: '获得 Google 广告专家帮助',
