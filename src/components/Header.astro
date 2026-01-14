@@ -7,7 +7,7 @@ interface Props {
 
 const { currentLang } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
-const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
+const basePath = currentLang === 'en' ? 'en' : `/${currentLang}`;
 ---
 
 <div class="bg-primary text-white py-2">

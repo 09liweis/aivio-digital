@@ -109,4 +109,75 @@ export const en = {
   footer: {
     copyright: '© 2025 Aivio Digital. All rights reserved.',
   },
+  googleAdsAudit: {
+    hero: {
+      title: 'Find What\'s Broken. Stop Wasting Budget. Get Clarity.',
+      subtitle: 'If your Google Ads are running but results feel inconsistent, unclear, or disappointing, the problem is often not the budget — it\'s the account structure. Our Google Ads Audit is a deep, structured review designed to uncover wasted spend, tracking issues, and missed opportunities.',
+    },
+    whyAuditMatters: {
+      title: 'Why a Google Ads Audit Matters',
+      subtitle: 'Many businesses invest in Google Ads without ever knowing:',
+      point1: 'Which keywords are actually generating enquiries',
+      point2: 'Whether conversion tracking is set up correctly',
+      point3: 'If budget is being spent on low-intent searches',
+      point4: 'Why performance fluctuates month to month',
+      conclusion: 'A proper audit gives you clarity before more money is spent.',
+    },
+    whatWeReview: {
+      title: 'What We Review in a Google Ads Audit',
+      structure: {
+        title: 'Account & Campaign Structure',
+        description: 'Evaluate whether campaigns and ad groups align with how customers search.',
+      },
+      keywords: {
+        title: 'Keyword & Search Term Analysis',
+        description: 'Identify wasted spend, low-intent traffic, and missed high-intent opportunities.',
+      },
+      bidding: {
+        title: 'Bidding & Budget Allocation',
+        description: 'Assess whether bids and budgets are supporting your business goals.',
+      },
+      adCopy: {
+        title: 'Ad Copy & Messaging',
+        description: 'Review ad relevance, clarity, and alignment with search intent.',
+      },
+      tracking: {
+        title: 'Conversion Tracking & Measurement',
+        description: 'Verify conversion setup to ensure data is accurate and actionable.',
+      },
+      landingPage: {
+        title: 'Landing Page & User Journey Review',
+        description: 'Analyze whether clicks are turning into enquiries — and why or why not.',
+      },
+    },
+    whatYouReceive: {
+      title: 'What You\'ll Receive',
+      point1: 'A structured audit summary',
+      point2: 'Clear explanations (no jargon)',
+      point3: 'Prioritized recommendations',
+      point4: 'Quick wins vs long-term fixes',
+      point5: 'An honest assessment of whether optimization or rebuild is needed',
+      note: 'No obligation to continue with management — The audit stands on its own',
+    },
+    bestFitFor: {
+      title: 'Best Fit For',
+      point1: 'Businesses currently running Google Ads',
+      point2: 'Accounts managed in-house or by previous agencies',
+      point3: 'Monthly ad spend CA$300+',
+      point4: 'Owners who want transparency and control',
+    },
+    afterAudit: {
+      title: 'What Happens After the Audit?',
+      subtitle: 'Based on the findings, you\'ll have three clear options:',
+      option1: 'Apply the recommendations yourself',
+      option2: 'Engage us for one-time account setup or restructuring',
+      option3: 'Move into ongoing Google Ads Management',
+      note: 'You decide — no pressure.',
+    },
+    ready: {
+      title: 'Ready to See What\'s Really Happening in Your Account?',
+      subtitle: 'If you\'re unsure whether your Google Ads budget is being used effectively, an audit is the smartest place to start.',
+      button: 'Request a Google Ads Audit',
+    },
+  },
 };

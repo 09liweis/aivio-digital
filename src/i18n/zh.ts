@@ -109,4 +109,75 @@ export const zh = {
   footer: {
     copyright: '© 2025 Aivio Digital。版权所有。',
   },
+  googleAdsAudit: {
+    hero: {
+      title: '发现问题，停止浪费，获得清晰洞察',
+      subtitle: '如果您的 Google 广告正在运行，但结果感觉不一致、不清楚或令人失望，问题往往不在于预算——而在于账户结构。我们的 Google 广告审计是一项深入、结构化的审查，旨在发现浪费的支出、跟踪问题和错失的机会。',
+    },
+    whyAuditMatters: {
+      title: '为什么 Google 广告审计很重要',
+      subtitle: '许多企业投资 Google 广告，却从未知道：',
+      point1: '哪些关键词真正在产生咨询',
+      point2: '转化跟踪是否设置正确',
+      point3: '预算是否花费在低意图搜索上',
+      point4: '为什么绩效每月波动',
+      conclusion: '适当的审计让您在投入更多资金之前获得清晰洞察。',
+    },
+    whatWeReview: {
+      title: '我们在 Google 广告审计中审查什么',
+      structure: {
+        title: '账户和广告活动结构',
+        description: '评估广告活动和广告组是否与客户的搜索方式一致。',
+      },
+      keywords: {
+        title: '关键词和搜索词分析',
+        description: '识别浪费的支出、低意图流量和错失的高意图机会。',
+      },
+      bidding: {
+        title: '出价和预算分配',
+        description: '评估出价和预算是否支持您的业务目标。',
+      },
+      adCopy: {
+        title: '广告文案和消息',
+        description: '审查广告相关性、清晰度以及与搜索意图的一致性。',
+      },
+      tracking: {
+        title: '转化跟踪和测量',
+        description: '验证转化设置，确保数据准确且可操作。',
+      },
+      landingPage: {
+        title: '着陆页和用户旅程审查',
+        description: '分析点击是否转化为咨询——以及为什么或为什么不。',
+      },
+    },
+    whatYouReceive: {
+      title: '您将获得什么',
+      point1: '结构化的审计摘要',
+      point2: '清晰的解释（无行话）',
+      point3: '优先建议',
+      point4: '快速见效与长期修复',
+      point5: '对是否需要优化或重建的诚实评估',
+      note: '无义务继续管理——审计本身即可独立完成',
+    },
+    bestFitFor: {
+      title: '最适合',
+      point1: '目前正在运行 Google 广告的企业',
+      point2: '内部或之前机构管理的账户',
+      point3: '每月广告支出 CA$300+',
+      point4: '希望透明度和控制权的所有者',
+    },
+    afterAudit: {
+      title: '审计后会发生什么？',
+      subtitle: '根据调查结果，您将有三个明确的选择：',
+      option1: '自己应用建议',
+      option2: '委托我们进行一次性账户设置或重组',
+      option3: '转入持续的 Google 广告管理',
+      note: '由您决定——无压力。',
+    },
+    ready: {
+      title: '准备好查看您账户的真实情况了吗？',
+      subtitle: '如果您不确定您的 Google 广告预算是否被有效使用，审计是最明智的起点。',
+      button: '申请 Google 广告审计',
+    },
+  },
 };
