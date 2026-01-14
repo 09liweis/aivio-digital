@@ -6,6 +6,7 @@ import { translations } from '../../i18n';
 
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
+const currentPath = Astro.url.pathname;
 const t = translations[currentLang].googleAdsManagement;
 export function getStaticPaths() {
   return [
@@ -16,7 +17,7 @@ export function getStaticPaths() {
 ---
 
 <Layout title={currentLang === 'zh' ? 'Google 广告管理 | Aivio Digital' : 'Google Ads Management | Aivio Digital'} lang={currentLang}>
-  <Header currentLang={currentLang} />
+  <Header currentLang={currentLang} currentPath={currentPath} />
 
   <main class="min-h-screen">
     <!-- Hero Section -->

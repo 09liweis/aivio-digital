@@ -13,6 +13,7 @@ import FAQs from '../components/FAQs.astro';
 // Get the language from the URL parameter
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
+const currentPath = Astro.url.pathname;
 
 // Generate static paths for language variants
 export function getStaticPaths() {
@@ -24,7 +25,7 @@ export function getStaticPaths() {
 ---
 
 <Layout title={currentLang === 'zh' ? '首页 | Aivio Digital' : 'Home | Aivio Digital'} lang={currentLang}>
-  <Header currentLang={currentLang} />
+  <Header currentLang={currentLang} currentPath={currentPath} />
 
   <main>
     <Hero currentLang={currentLang} />

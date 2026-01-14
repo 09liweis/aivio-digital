@@ -3,11 +3,28 @@ import { languages, translations } from '../i18n/index';
 
 interface Props {
   currentLang: string;
+  currentPath?: string;
 }
 
-const { currentLang } = Astro.props;
+const { currentLang, currentPath = '/' } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
 const basePath = currentLang === 'en' ? 'en' : `${currentLang}`;
+
+const menuItems = [
+  { key: 'home', href: currentLang === 'en' ? '/' : '/zh' },
+  { key: 'googleAdsAudit', href: `/${basePath}/google-ads-audit` },
+  { key: 'googleAdsManagement', href: `/${basePath}/google-ads-management` },
+  { key: 'caseStudy', href: `/${basePath}/case-study` },
+  { key: 'aboutUs', href: `/${basePath}/about-us` },
+  { key: 'blog', href: `/${basePath}/blog` },
+];
+
+const isActive = (href: string) => {
+  if (currentPath === '/') {
+    return href === '/';
+  }
+  return currentPath.startsWith(href);
+};
 ---
 <div class="bg-primary text-white py-2">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center gap-6 text-sm">
@@ -34,12 +51,20 @@ const basePath = currentLang === 'en' ? 'en' : `${currentLang}`;
       </a>
       
       <ul class="flex items-center gap-1">
-        <li><a href={currentLang === 'en' ? '/' : '/zh'} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.home}</a></li>
-        <li><a href={`/${basePath}/google-ads-audit`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsAudit}</a></li>
-        <li><a href={`/${basePath}/google-ads-management`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsManagement}</a></li>
-        <li><a href={`/${basePath}/case-study`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.caseStudy}</a></li>
-        <li><a href={`/${basePath}/about-us`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.aboutUs}</a></li>
-        <li><a href={`/${basePath}/blog`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.blog}</a></li>
+        {menuItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded-md font-medium text-sm transition ${
+                isActive(item.href)
+                  ? 'text-primary bg-blue-50'
+                  : 'text-gray-700 hover:text-primary hover:bg-blue-50'
+              }`}
+            >
+              {t.nav[item.key as keyof typeof t.nav]}
+            </a>
+          </li>
+        ))}
       </ul>
 
       <div class="flex items-center gap-3">
