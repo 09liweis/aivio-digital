@@ -1,8 +1,12 @@
 export const en = {
   nav: {
     home: 'Home',
-    about: 'About',
-    contact: 'Contact',
+    googleAdsAudit: 'Google Ads Audit',
+    googleAdsManagement: 'Google Ads Management',
+    caseStudy: 'Case Study',
+    aboutUs: 'About Us',
+    blog: 'Blog',
+    getAudit: 'Get a Google Ads Account Audit',
   },
   hero: {
     title: 'Welcome to Our Website',

@@ -1,8 +1,12 @@
 export const zh = {
   nav: {
     home: '首页',
-    about: '关于',
-    contact: '联系',
+    googleAdsAudit: 'Google 广告账户审计',
+    googleAdsManagement: 'Google 广告账户管理',
+    caseStudy: '案例分析',
+    aboutUs: '关于我们',
+    blog: '博客',
+    getAudit: '预约 Google Ads 审计服务',
   },
   hero: {
     title: '欢迎来到我们的网站',
