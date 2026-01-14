@@ -109,6 +109,46 @@ export const zh = {
   footer: {
     copyright: '© 2025 Aivio Digital。版权所有。',
   },
+  contactUs: {
+    hero: {
+      title: '获得 Google 广告专家帮助',
+      description: '无论您需要 Google 广告审计还是持续的 Google 广告管理，我们的团队都会审查您的账户并推荐改进结果的计划。',
+    },
+    howItWorks: {
+      title: '工作流程',
+      step1: '提交您的请求——填写下面的简短表格并选择您感兴趣的服务。',
+      step2: '我们审查您的账户——我们的团队将分析您的广告活动或讨论您的目标。',
+      step3: '接收计划和报价——我们将通过可操作的建议和清晰的报价与您联系。',
+    },
+    servicesPricing: {
+      title: '服务和定价',
+      audit: {
+        title: 'Google 广告审计',
+        description: '专业付费审计，以识别机会并优化广告活动。价格：$199。',
+      },
+      management: {
+        title: 'Google 广告管理',
+        description: '持续的广告活动管理，以提高潜在客户质量和投资回报率。定价取决于您的广告支出和服务，从 $500/月起。新账户可能需要一次性设置费。',
+      },
+      both: '两项服务——一些客户从审计开始，然后继续进行管理。',
+    },
+    form: {
+      title: '申请您的服务',
+      description: '请填写下面的表格，我们将在 24 小时内回复您。',
+      fullName: '全名（必填）',
+      email: '电子邮件地址（必填）',
+      phone: '电话号码',
+      company: '公司名称',
+      message: '消息（当前广告支出、广告活动目标、问题或问题）',
+      submit: '提交请求',
+    },
+    afterSubmit: {
+      title: '提交后',
+      description: '一旦您提交请求，我们的 Google 广告专家将在 24 小时内与您联系。',
+      auditNote: '对于审计，我们将确认 $199 的费用并安排您的审查。',
+      managementNote: '对于管理，我们将根据您的目标和广告支出提供定制报价。在承诺任何服务之前，您将拥有清晰的计划和定价。',
+    },
+  },
   aboutUs: {
     hero: {
       title: '我们通过智能 Google 广告帮助企业成长',

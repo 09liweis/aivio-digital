@@ -109,6 +109,46 @@ export const en = {
   footer: {
     copyright: '© 2025 Aivio Digital. All rights reserved.',
   },
+  contactUs: {
+    hero: {
+      title: 'Get Expert Help with Google Ads',
+      description: 'Whether you need a Google Ads Audit or ongoing Google Ads Management, our team will review your account and recommend a plan to improve results.',
+    },
+    howItWorks: {
+      title: 'How It Works',
+      step1: 'Submit your request – Fill out the short form below and select the service you\'re interested in.',
+      step2: 'We review your account – Our team will analyze your campaigns or discuss your goals.',
+      step3: 'Receive a plan & quote – We\'ll contact you with actionable recommendations and a clear quote.',
+    },
+    servicesPricing: {
+      title: 'Services & Pricing',
+      audit: {
+        title: 'Google Ads Audit',
+        description: 'Professional, paid audit to identify opportunities and optimize campaigns. Price: $199.',
+      },
+      management: {
+        title: 'Google Ads Management',
+        description: 'Ongoing campaign management to improve lead quality and ROI. Pricing depends on your ad spend and services, starting at $500/month. Brand-new accounts may require a one-time setup fee.',
+      },
+      both: 'Both Services – Some clients start with an audit and continue with management.',
+    },
+    form: {
+      title: 'Request Your Service',
+      description: 'Please fill out the form below and we\'ll get back to you within 24 hours.',
+      fullName: 'Full Name (required)',
+      email: 'Email Address (required)',
+      phone: 'Phone Number',
+      company: 'Company Name',
+      message: 'Message (current ad spend, campaign goals, issues, or questions)',
+      submit: 'Submit Request',
+    },
+    afterSubmit: {
+      title: 'After You Submit',
+      description: 'Once you submit your request, our Google Ads expert will contact you within 24 hours.',
+      auditNote: 'For audits, we\'ll confirm the $199 fee and schedule your review.',
+      managementNote: 'For management, we\'ll provide a custom quote based on your goals and ad spend. You\'ll have a clear plan and pricing before committing to any service.',
+    },
+  },
   aboutUs: {
     hero: {
       title: 'We Help Businesses Grow with Smart Google Ads',
