@@ -1,0 +1,47 @@
+---
+import { translations } from '../i18n/index';
+
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const t = translations[currentLang as keyof typeof translations];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t.howItWorks.title}</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">{t.howItWorks.subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="text-center">
+        <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-primary">1</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-gray-900">{t.howItWorks.audit.title}</h3>
+        <p class="text-gray-600 leading-relaxed">{t.howItWorks.audit.description}</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-primary">{t.howItWorks.fixAndBuild.step}</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-gray-900">{t.howItWorks.fixAndBuild.title}</h3>
+        <p class="text-gray-600 leading-relaxed">{t.howItWorks.fixAndBuild.description}</p>
+      </div>
+      <div class="text-center">
+        <div class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-primary">{t.howItWorks.manageAndOptimize.step}</span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-gray-900">{t.howItWorks.manageAndOptimize.title}</h3>
+        <p class="text-gray-600 leading-relaxed">{t.howItWorks.manageAndOptimize.description}</p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-lg text-gray-700 font-medium">{t.howItWorks.noContract}</p>
+    </div>
+  </div>
+</section>
