@@ -1,0 +1,56 @@
+---
+import { languages, translations } from '../i18n/index';
+
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const t = translations[currentLang as keyof typeof translations];
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-primary">Aivio Digital</div>
+      <ul class="flex gap-8 items-center">
+        <li><a href={currentLang === 'en' ? '/' : '/zh'} class="hover:text-primary transition">{t.nav.home}</a></li>
+        <li><a href="#" class="hover:text-primary transition">{t.nav.about}</a></li>
+        <li><a href="#" class="hover:text-primary transition">{t.nav.contact}</a></li>
+        <li class="flex gap-2">
+          {Object.entries(languages).map(([code, name]) => (
+            <button
+              data-lang={code}
+              class={`px-3 py-1 rounded transition ${
+                currentLang === code
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-200 hover:bg-gray-300'
+              }`}
+              onclick={`switchLanguage('${code}')`}
+            >
+              {name}
+            </button>
+          ))}
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function switchLanguage(lang: string) {
+    localStorage.setItem('lang', lang);
+    const newPath = lang === 'en' ? '/' : `/${lang}`;
+    window.location.href = newPath;
+  }
+  
+  // Expose to window for onclick handlers
+  (window as any).switchLanguage = switchLanguage;
+</script>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

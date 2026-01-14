@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { translations } from '../i18n/index';
+
+const currentLang = 'en';
+const t = translations[currentLang];
+---
+
+<Layout title="Home | Aivio Digital" lang={currentLang}>
+  <Header currentLang={currentLang} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+      <div class="text-center text-white px-4">
+        <h1 class="text-6xl font-bold mb-6">{t.hero.title}</h1>
+        <p class="text-2xl mb-8 text-blue-100">{t.hero.subtitle}</p>
+        <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-lg">
+          {t.hero.cta}
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+            <p class="text-gray-600">Built with Astro for optimal performance and speed.</p>
+          </div>
+          <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
+            <div class="text-4xl mb-4">🌐</div>
+            <h3 class="text-xl font-semibold mb-3">Multi-Language</h3>
+            <p class="text-gray-600">Full i18n support for English and Chinese languages.</p>
+          </div>
+          <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-semibold mb-3">Beautifully Designed</h3>
+            <p class="text-gray-600">Styled with TailwindCSS for a modern appearance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white">
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+        <p class="text-xl mb-8 text-blue-100">Join us and build something amazing today.</p>
+        <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-lg">
+          {t.hero.cta}
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <Footer currentLang={currentLang} />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>
