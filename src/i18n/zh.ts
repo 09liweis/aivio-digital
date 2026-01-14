@@ -64,7 +64,7 @@ export const zh = {
       role: '所有者，定制印刷服务公司',
     },
   },
-  caseStudy: {
+  caseStudyShort: {
     label: '案例分析',
     title: '多伦多定制包装公司',
     subtitle: 'Google 广告搜索优化',

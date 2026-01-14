@@ -64,7 +64,7 @@ export const en = {
       role: 'Owner, Custom Printing Service Company',
     },
   },
-  caseStudy: {
+  caseStudyShort: {
     label: 'Case Study',
     title: 'Toronto Custom Packaging Company',
     subtitle: 'Google Ads Search Optimization',
@@ -75,7 +75,7 @@ export const en = {
     solution2: 'Restructured campaigns for better organization',
     solution3: 'Optimized landing page content & FAQs',
     result: 'Lead quality improved by 40%, budget used more efficiently, and client gained better control over ad spend',
-    keyTakeaway: 'By narrowing focus and optimizing campaigns, the client gets more high-quality inquiries without increasing costs',
+    keyTakeaway: 'By narrowing focus and optimizing campaigns, client gets more high-quality inquiries without increasing costs',
   },
   finalCta: {
     title: 'READY TO GROW YOUR BUSINESS?',
@@ -166,7 +166,7 @@ export const en = {
       title: 'Results & Impact',
       point1: 'Higher-quality inquiries without increasing ad spend.',
       point2: 'Improved engagement on the landing page.',
-      point3: 'Fewer low-quality clicks and better ROI on limited budget.',
+      point3: 'Fewer low-quality clicks and better ROI on a limited budget.',
       point4: 'Business owner gained confidence and clear visibility into lead sources.',
       point5: 'Most importantly, the account shifted from "running ads blindly" to having a controlled, intentional setup.',
     },
@@ -315,7 +315,7 @@ export const en = {
       title: 'What Happens After the Audit?',
       subtitle: 'Based on the findings, you\'ll have three clear options:',
       option1: 'Apply the recommendations yourself',
-      option2: 'Engage us for one-time account setup or restructuring',
+      option2: 'Engage us for a one-time account setup or restructuring',
       option3: 'Move into ongoing Google Ads Management',
       note: 'You decide — no pressure.',
     },
@@ -389,7 +389,7 @@ export const en = {
     ongoingManagement: {
       title: 'Ongoing Google Ads Management',
       subtitle: '(Monthly Service)',
-      description: 'Once foundation is in place, we manage and optimize your campaigns on an ongoing basis.',
+      description: 'Once the foundation is in place, we manage and optimize your campaigns on an ongoing basis.',
       includesTitle: 'Monthly Management Includes:',
       point1: 'Keyword & search term optimization',
       point2: 'Bid & budget adjustments',
@@ -434,7 +434,7 @@ export const en = {
       },
       q6: {
         question: 'What is the cost of Google Ads management services?',
-        answer: 'Our pricing depends on the scope of your campaigns, ad spend, and level of management you need. We offer scalable packages to accommodate various budgets, and our pricing is transparent to ensure you know exactly where your investment is going.',
+        answer: 'Our pricing depends on the scope of your campaigns, ad spend, and the level of management you need. We offer scalable packages to accommodate various budgets, and our pricing is transparent to ensure you know exactly where your investment is going.',
       },
     },
   },

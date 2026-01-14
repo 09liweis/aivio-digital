@@ -13,56 +13,56 @@ const t = translations[currentLang as keyof typeof translations];
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <span class="inline-block bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">{t.caseStudy.label}</span>
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t.caseStudy.title}</h2>
-        <p class="text-xl text-primary font-semibold">{t.caseStudy.subtitle}</p>
+        <span class="inline-block bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">{t.caseStudyShort.label}</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t.caseStudyShort.title}</h2>
+        <p class="text-xl text-primary font-semibold">{t.caseStudyShort.subtitle}</p>
       </div>
 
       <div class="bg-gray-50 rounded-xl p-8 mb-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h4 class="text-sm text-gray-600 mb-1">Monthly ad spend</h4>
-            <p class="text-xl font-bold text-gray-900">{t.caseStudy.monthlySpend}</p>
+            <p class="text-xl font-bold text-gray-900">{t.caseStudyShort.monthlySpend}</p>
           </div>
           <div>
             <h4 class="text-sm text-gray-600 mb-1">Challenge</h4>
-            <p class="text-xl font-bold text-gray-900">{t.caseStudy.challenge}</p>
+            <p class="text-xl font-bold text-gray-900">{t.caseStudyShort.challenge}</p>
           </div>
         </div>
       </div>
 
       <div class="bg-blue-50 rounded-xl p-8 mb-8">
-        <h4 class="text-lg font-bold text-gray-900 mb-4">{t.caseStudy.solution}</h4>
+        <h4 class="text-lg font-bold text-gray-900 mb-4">{t.caseStudyShort.solution}</h4>
         <ul class="space-y-3 text-gray-700">
           <li class="flex items-start gap-3">
             <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span>{t.caseStudy.solution1}</span>
+            <span>{t.caseStudyShort.solution1}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span>{t.caseStudy.solution2}</span>
+            <span>{t.caseStudyShort.solution2}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span>{t.caseStudy.solution3}</span>
+            <span>{t.caseStudyShort.solution3}</span>
           </li>
         </ul>
       </div>
 
       <div class="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
         <h4 class="text-lg font-bold text-gray-900 mb-4">Result</h4>
-        <p class="text-gray-700 text-lg">{t.caseStudy.result}</p>
+        <p class="text-gray-700 text-lg">{t.caseStudyShort.result}</p>
       </div>
 
       <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6">
         <h4 class="text-lg font-bold text-gray-900 mb-2">Key Takeaway</h4>
-        <p class="text-gray-700">{t.caseStudy.keyTakeaway}</p>
+        <p class="text-gray-700">{t.caseStudyShort.keyTakeaway}</p>
       </div>
     </div>
   </div>
