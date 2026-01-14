@@ -7,9 +7,8 @@ interface Props {
 
 const { currentLang } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
-const basePath = currentLang === 'en' ? 'en' : `/${currentLang}`;
+const basePath = currentLang === 'en' ? 'en' : `${currentLang}`;
 ---
-
 <div class="bg-primary text-white py-2">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center gap-6 text-sm">
     <a href="mailto:hello@aivio.digital" class="flex items-center gap-2 hover:text-blue-200 transition">
@@ -36,11 +35,11 @@ const basePath = currentLang === 'en' ? 'en' : `/${currentLang}`;
       
       <ul class="flex items-center gap-1">
         <li><a href={currentLang === 'en' ? '/' : '/zh'} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.home}</a></li>
-        <li><a href={`${basePath}/google-ads-audit`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsAudit}</a></li>
-        <li><a href={`${basePath}/google-ads-management`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsManagement}</a></li>
-        <li><a href={`${basePath}/case-study`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.caseStudy}</a></li>
-        <li><a href={`${basePath}/about-us`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.aboutUs}</a></li>
-        <li><a href={`${basePath}/blog`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.blog}</a></li>
+        <li><a href={`/${basePath}/google-ads-audit`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsAudit}</a></li>
+        <li><a href={`/${basePath}/google-ads-management`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.googleAdsManagement}</a></li>
+        <li><a href={`/${basePath}/case-study`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.caseStudy}</a></li>
+        <li><a href={`/${basePath}/about-us`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.aboutUs}</a></li>
+        <li><a href={`/${basePath}/blog`} class="px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-blue-50 transition font-medium text-sm">{t.nav.blog}</a></li>
       </ul>
 
       <div class="flex items-center gap-3">

@@ -180,4 +180,117 @@ export const en = {
       button: 'Request a Google Ads Audit',
     },
   },
+  googleAdsManagement: {
+    hero: {
+      title: 'Google Ads Management Services',
+      subtitle: 'Focused. Transparent. Built for Small Businesses.',
+      description: 'Google Ads doesn\'t need more spend — it needs better structure, clearer intent, and disciplined optimization. We help small businesses turn search intent into real enquiries through carefully managed Google Ads campaigns.',
+    },
+    whyWorkWithUs: {
+      title: 'Why Work With Aivio Digital',
+      management: {
+        title: 'Dedicated & Hands-On Management',
+        description: 'Your Google Ads account is managed directly — not passed between teams. You always know who\'s working on your campaigns and why changes are made.',
+      },
+      strategy: {
+        title: 'Strategy Built Around Your Business',
+        description: 'No templates. No "one-size-fits-all". Campaigns are structured based on your services, search intent, and budget reality.',
+      },
+      conversion: {
+        title: 'Conversion-Focused, Not Click-Focused',
+        description: 'We prioritize high-intent keywords and lead quality over traffic volume.',
+      },
+      reporting: {
+        title: 'Clear Reporting & Practical Insights',
+        description: 'You\'ll understand what\'s working, what\'s not, and where your budget is going — without marketing jargon.',
+      },
+    },
+    howWeManage: {
+      title: 'How We Manage Google Ads',
+      structure: {
+        title: 'Campaign & Account Structure',
+        description: 'Clean, logical campaign structure aligned with how customers actually search.',
+      },
+      bidding: {
+        title: 'Bidding & Budget Control',
+        description: 'Budgets are allocated toward keywords that convert — not those that just generate clicks.',
+      },
+      adCopy: {
+        title: 'Ad Copy Optimization',
+        description: 'Ads are written and refined to attract qualified prospects, not curiosity traffic.',
+      },
+      monitoring: {
+        title: 'Performance Monitoring',
+        description: 'Weekly performance reviews and data-driven adjustments.',
+      },
+      optimization: {
+        title: 'Conversion Optimization Support',
+        description: 'Landing page messaging, FAQs, and structure recommendations to improve enquiry rates.',
+      },
+    },
+    oneTimeSetup: {
+      title: 'One-Time Google Ads Account Setup',
+      subtitle: '(For New Accounts)',
+      description: 'If you\'re starting Google Ads from scratch, we first build a solid foundation.',
+      includesTitle: 'Setup Includes:',
+      point1: 'Account & conversion tracking setup',
+      point2: 'Keyword research (high-intent focus)',
+      point3: 'Campaign & ad group structure',
+      point4: 'Ad copy creation',
+      point5: 'Initial bidding & budget strategy',
+      point6: 'Landing page review',
+      note: 'One-time setup fee applies — Designed to avoid wasted spend and structural mistakes',
+    },
+    ongoingManagement: {
+      title: 'Ongoing Google Ads Management',
+      subtitle: '(Monthly Service)',
+      description: 'Once foundation is in place, we manage and optimize your campaigns on an ongoing basis.',
+      includesTitle: 'Monthly Management Includes:',
+      point1: 'Keyword & search term optimization',
+      point2: 'Bid & budget adjustments',
+      point3: 'Ad copy testing',
+      point4: 'Performance reporting',
+      point5: 'Conversion-focused refinements',
+    },
+    bestFitFor: {
+      title: 'Best Fit For',
+      point1: 'Service-based businesses',
+      point2: 'Local & regional companies',
+      point3: 'Lead generation focused (not e-commerce heavy)',
+      point4: 'Monthly ad spend CA$300–$3,000',
+      point5: 'Owners who want clarity, not inflated promises',
+    },
+    notSure: {
+      title: 'Not Sure Where to Start?',
+      description: 'If you already run Google Ads, start with a Google Ads Account Audit. If you\'re new to Google Ads, we\'ll begin with a proper setup.',
+      button: 'Request a Google Ads Audit – $199',
+    },
+    faq: {
+      title: 'Google Ads Management Services FAQ',
+      q1: {
+        question: 'What is Google Ads, and how does it work?',
+        answer: 'Google Ads is an online advertising platform where businesses bid on keywords to display ads on Google\'s search results, YouTube, and partner sites. You only pay when users click on your ad (pay-per-click), making it a highly targeted and cost-effective way to reach potential customers.',
+      },
+      q2: {
+        question: 'What services are included in Google Ads management?',
+        answer: 'Our Google Ads management includes campaign setup, keyword research, ad copywriting, bid management, A/B testing, conversion tracking, audience targeting, and ongoing optimization to improve performance and maximize ROI.',
+      },
+      q3: {
+        question: 'How do you select the best keywords for my campaigns?',
+        answer: 'We conduct thorough keyword research based on search volume, relevance, and competition. We select keywords that align with your business goals and target audience to attract high-intent users likely to convert.',
+      },
+      q4: {
+        question: 'How long does it take to see results from Google Ads?',
+        answer: 'Results from Google Ads can be seen within days, as your ads go live quickly after campaign launch. However, it usually takes 2-4 weeks of optimization to maximize performance and generate steady, cost-effective conversions.',
+      },
+      q5: {
+        question: 'Can I target specific locations with Google Ads?',
+        answer: 'Yes, we can target specific locations, including countries, states, cities, or even custom areas like a specific radius around a location. This is particularly useful for businesses targeting local audiences.',
+      },
+      q6: {
+        question: 'What is the cost of Google Ads management services?',
+        answer: 'Our pricing depends on the scope of your campaigns, ad spend, and level of management you need. We offer scalable packages to accommodate various budgets, and our pricing is transparent to ensure you know exactly where your investment is going.',
+      },
+    },
+  },
 };

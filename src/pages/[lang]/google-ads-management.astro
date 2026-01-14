@@ -1,0 +1,358 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { translations } from '../../i18n';
+
+const { lang } = Astro.params;
+const currentLang = (lang || 'en') as 'en' | 'zh';
+const t = translations[currentLang].googleAdsManagement;
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+  ];
+}
+---
+
+<Layout title={currentLang === 'zh' ? 'Google 广告管理 | Aivio Digital' : 'Google Ads Management | Aivio Digital'} lang={currentLang}>
+  <Header currentLang={currentLang} />
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          {t.hero.title}
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-100">
+          {t.hero.subtitle}
+        </h2>
+        <p class="text-xl text-blue-100 leading-relaxed">
+          {t.hero.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          {t.whyWorkWithUs.title}
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyWorkWithUs.management.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.whyWorkWithUs.management.description}
+            </p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyWorkWithUs.strategy.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.whyWorkWithUs.strategy.description}
+            </p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyWorkWithUs.conversion.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.whyWorkWithUs.conversion.description}
+            </p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {t.whyWorkWithUs.reporting.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.whyWorkWithUs.reporting.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Manage -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          {t.howWeManage.title}
+        </h2>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.howWeManage.structure.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.howWeManage.structure.description}
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.howWeManage.bidding.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.howWeManage.bidding.description}
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.howWeManage.adCopy.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.howWeManage.adCopy.description}
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.howWeManage.monitoring.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.howWeManage.monitoring.description}
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {t.howWeManage.optimization.title}
+            </h3>
+            <p class="text-gray-700">
+              {t.howWeManage.optimization.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- One-Time Setup -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+          {t.oneTimeSetup.title}
+        </h2>
+        <p class="text-lg text-blue-600 font-semibold mb-4 text-center">
+          {t.oneTimeSetup.subtitle}
+        </p>
+        <p class="text-gray-700 mb-8 text-center">
+          {t.oneTimeSetup.description}
+        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">
+          {t.oneTimeSetup.includesTitle}
+        </h3>
+        <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point1}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point2}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point3}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point4}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point5}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.oneTimeSetup.point6}</span>
+          </li>
+        </ul>
+        <p class="text-lg text-gray-600 mt-8 text-center italic">
+          {t.oneTimeSetup.note}
+        </p>
+      </div>
+    </section>
+
+    <!-- Ongoing Management -->
+    <section class="py-16 px-4 bg-blue-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+          {t.ongoingManagement.title}
+        </h2>
+        <p class="text-lg text-blue-600 font-semibold mb-4 text-center">
+          {t.ongoingManagement.subtitle}
+        </p>
+        <p class="text-gray-700 mb-8 text-center">
+          {t.ongoingManagement.description}
+        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">
+          {t.ongoingManagement.includesTitle}
+        </h3>
+        <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ongoingManagement.point1}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ongoingManagement.point2}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ongoingManagement.point3}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ongoingManagement.point4}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.ongoingManagement.point5}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Best Fit For -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+          {t.bestFitFor.title}
+        </h2>
+        <ul class="space-y-4 text-gray-700 max-w-2xl mx-auto">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.bestFitFor.point1}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.bestFitFor.point2}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.bestFitFor.point3}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.bestFitFor.point4}</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span>{t.bestFitFor.point5}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Not Sure Where to Start -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          {t.notSure.title}
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+          {t.notSure.description}
+        </p>
+        <a
+          href={`mailto:hello@aivio.digital?subject=Google Ads Audit Request`}
+          class="inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg shadow-md hover:shadow-lg"
+        >
+          {t.notSure.button}
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 px-4 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          {t.faq.title}
+        </h2>
+        <div class="space-y-6">
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q1.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q1.answer}
+            </p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q2.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q2.answer}
+            </p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q3.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q3.answer}
+            </p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q4.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q4.answer}
+            </p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q5.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q5.answer}
+            </p>
+          </details>
+          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+            <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
+              {t.faq.q6.question}
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-700">
+              {t.faq.q6.answer}
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer currentLang={currentLang} />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

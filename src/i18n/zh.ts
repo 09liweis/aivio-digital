@@ -180,4 +180,117 @@ export const zh = {
       button: '申请 Google 广告审计',
     },
   },
+  googleAdsManagement: {
+    hero: {
+      title: 'Google 广告管理服务',
+      subtitle: '专注。透明。专为中小企业打造。',
+      description: 'Google 广告不需要更多支出——它需要更好的结构、更清晰的意图和严格的优化。我们通过精心管理的 Google 广告活动，帮助中小企业将搜索意图转化为真实的咨询。',
+    },
+    whyWorkWithUs: {
+      title: '为什么选择 Aivio Digital',
+      management: {
+        title: '专注且亲力亲为的管理',
+        description: '您的 Google 广告账户直接管理——不会在团队之间传递。您总是知道谁在处理您的广告活动以及为什么要进行更改。',
+      },
+      strategy: {
+        title: '围绕您的业务构建策略',
+        description: '没有模板。没有"一刀切"。广告活动的结构基于您的服务、搜索意图和预算实际情况。',
+      },
+      conversion: {
+        title: '专注于转化而非点击',
+        description: '我们优先考虑高意图关键词和潜在客户质量，而非流量数量。',
+      },
+      reporting: {
+        title: '清晰的报告和实用的洞察',
+        description: '您将了解什么有效、什么无效以及预算的去向——没有营销术语。',
+      },
+    },
+    howWeManage: {
+      title: '我们如何管理 Google 广告',
+      structure: {
+        title: '广告活动和账户结构',
+        description: '清晰、符合逻辑的广告活动结构，与客户的实际搜索方式一致。',
+      },
+      bidding: {
+        title: '出价和预算控制',
+        description: '预算分配给能转化的关键词——而不仅仅是产生点击的关键词。',
+      },
+      adCopy: {
+        title: '广告文案优化',
+        description: '广告的编写和细化旨在吸引合格的潜在客户，而非好奇流量。',
+      },
+      monitoring: {
+        title: '绩效监控',
+        description: '每周绩效审查和数据驱动的调整。',
+      },
+      optimization: {
+        title: '转化优化支持',
+        description: '着陆页消息、常见问题和结构建议，以提高咨询率。',
+      },
+    },
+    oneTimeSetup: {
+      title: '一次性 Google 广告账户设置',
+      subtitle: '（适用于新账户）',
+      description: '如果您从零开始 Google 广告，我们首先建立一个坚实的基础。',
+      includesTitle: '设置包括：',
+      point1: '账户和转化跟踪设置',
+      point2: '关键词研究（专注于高意图）',
+      point3: '广告活动和广告组结构',
+      point4: '广告文案创作',
+      point5: '初始出价和预算策略',
+      point6: '着陆页审查',
+      note: '适用一次性设置费——旨在避免浪费支出和结构错误',
+    },
+    ongoingManagement: {
+      title: '持续的 Google 广告管理',
+      subtitle: '（月度服务）',
+      description: '一旦基础到位，我们将持续管理和优化您的广告活动。',
+      includesTitle: '月度管理包括：',
+      point1: '关键词和搜索词优化',
+      point2: '出价和预算调整',
+      point3: '广告文案测试',
+      point4: '绩效报告',
+      point5: '专注于转化的改进',
+    },
+    bestFitFor: {
+      title: '最适合',
+      point1: '服务型企业',
+      point2: '本地和区域公司',
+      point3: '专注于潜在客户生成（非重度电子商务）',
+      point4: '每月广告支出 CA$300–$3,000',
+      point5: '希望清晰而非夸大承诺的所有者',
+    },
+    notSure: {
+      title: '不确定从哪里开始？',
+      description: '如果您已经在运行 Google 广告，请从 Google 广告账户审计开始。如果您是 Google 广告新手，我们将从适当的设置开始。',
+      button: '申请 Google 广告审计 – $199',
+    },
+    faq: {
+      title: 'Google 广告管理服务常见问题',
+      q1: {
+        question: '什么是 Google 广告，它是如何工作的？',
+        answer: 'Google 广告是一个在线广告平台，企业可以在其中竞标关键词，以便在 Google 搜索结果、YouTube 和合作伙伴网站上展示广告。您只需在用户点击您的广告时付费（按点击付费），这是一种高度针对性和经济高效的方式，可以接触到潜在客户。',
+      },
+      q2: {
+        question: 'Google 广告管理包括哪些服务？',
+        answer: '我们的 Google 广告管理包括广告活动设置、关键词研究、广告文案撰写、出价管理、A/B 测试、转化跟踪、受众定位和持续优化，以提高绩效并最大化投资回报率。',
+      },
+      q3: {
+        question: '您如何为我的广告活动选择最佳关键词？',
+        answer: '我们根据搜索量、相关性和竞争情况进行全面的关键词研究。我们选择与您的业务目标和目标受众一致的关键词，以吸引可能转化的高意图用户。',
+      },
+      q4: {
+        question: 'Google 广告需要多长时间才能看到结果？',
+        answer: 'Google 广告的结果可以在几天内看到，因为您的广告在广告活动启动后很快就会上线。然而，通常需要 2-4 周的优化才能最大化绩效并产生稳定、经济高效的转化。',
+      },
+      q5: {
+        question: '我可以用 Google 广告针对特定位置吗？',
+        answer: '可以，我们可以针对特定位置，包括国家、州、城市，甚至是围绕某个位置的特定半径等自定义区域。这对于针对本地受众的企业特别有用。',
+      },
+      q6: {
+        question: 'Google 广告管理服务的费用是多少？',
+        answer: '我们的定价取决于您的广告活动范围、广告支出和您所需的管理级别。我们提供可扩展的套餐以适应各种预算，而且我们的定价是透明的，以确保您确切知道您的投资去向。',
+      },
+    },
+  },
 };
