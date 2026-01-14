@@ -4,11 +4,21 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { translations } from '../i18n/index';
 
-const currentLang = 'zh';
+// Get the language from the URL parameter
+const { lang } = Astro.params;
+const currentLang = (lang || 'en') as 'en' | 'zh';
 const t = translations[currentLang];
+
+// Generate static paths for language variants
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },  // /en for English
+    { params: { lang: 'zh' } },  // /zh for Chinese
+  ];
+}
 ---
 
-<Layout title="首页 | Aivio Digital" lang={currentLang}>
+<Layout title={currentLang === 'zh' ? '首页 | Aivio Digital' : 'Home | Aivio Digital'} lang={currentLang}>
   <Header currentLang={currentLang} />
   
   <main>
@@ -26,22 +36,36 @@ const t = translations[currentLang];
     <!-- Features Section -->
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">主要功能</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">
+          {t.features.title}
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
             <div class="text-4xl mb-4">⚡</div>
-            <h3 class="text-xl font-semibold mb-3">闪电般快速</h3>
-            <p class="text-gray-600">采用 Astro 构建以实现最佳性能和速度。</p>
+            <h3 class="text-xl font-semibold mb-3">
+              {t.features.fast.title}
+            </h3>
+            <p class="text-gray-600">
+              {t.features.fast.description}
+            </p>
           </div>
           <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
             <div class="text-4xl mb-4">🌐</div>
-            <h3 class="text-xl font-semibold mb-3">多语言支持</h3>
-            <p class="text-gray-600">完整的 i18n 支持英文和中文语言。</p>
+            <h3 class="text-xl font-semibold mb-3">
+              {t.features.multilang.title}
+            </h3>
+            <p class="text-gray-600">
+              {t.features.multilang.description}
+            </p>
           </div>
           <div class="p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
             <div class="text-4xl mb-4">🎨</div>
-            <h3 class="text-xl font-semibold mb-3">精美设计</h3>
-            <p class="text-gray-600">使用 TailwindCSS 进行现代外观设计。</p>
+            <h3 class="text-xl font-semibold mb-3">
+              {t.features.design.title}
+            </h3>
+            <p class="text-gray-600">
+              {t.features.design.description}
+            </p>
           </div>
         </div>
       </div>
@@ -50,8 +74,12 @@ const t = translations[currentLang];
     <!-- CTA Section -->
     <section class="py-20 bg-primary text-white">
       <div class="max-w-4xl mx-auto text-center px-4">
-        <h2 class="text-4xl font-bold mb-6">准备好开始了吗？</h2>
-        <p class="text-xl mb-8 text-blue-100">加入我们，今天就创建一些了不起的东西。</p>
+        <h2 class="text-4xl font-bold mb-6">
+          {t.cta.title}
+        </h2>
+        <p class="text-xl mb-8 text-blue-100">
+          {t.cta.description}
+        </p>
         <button class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition text-lg">
           {t.hero.cta}
         </button>
