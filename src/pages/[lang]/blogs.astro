@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { translations } from '../../i18n';
 import { blogPosts } from '../../i18n/blog';
+import Hero from '../../components/Hero.astro';
 
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
@@ -22,17 +23,7 @@ export function getStaticPaths() {
 
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary to-primaryDark text-white py-20 px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {blogContent.title}
-        </h1>
-        <p class="text-xl text-secondaryDark/40">
-          {blogContent.subtitle}
-        </p>
-      </div>
-    </section>
+    <Hero title={blogContent.title} description={blogContent.subtitle} />
 
     <!-- Blog Posts Grid -->
     <section class="py-16 px-4 bg-gray-50">

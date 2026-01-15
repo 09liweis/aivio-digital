@@ -1,21 +1,27 @@
 ---
-import { translations } from '../i18n/index';
-import { getMenuLink } from '../utils/menuItems';
-
 interface Props {
-  currentLang: string;
+  title: string;
+  subtitle?: string;
+  description?: string;
 }
 
-const { currentLang } = Astro.props;
-const t = translations[currentLang as keyof typeof translations];
+const { title, subtitle, description } = Astro.props;
 ---
 
-<section class="min-h-[80vh] bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-  <div class="text-center text-white px-4 max-w-4xl mx-auto">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">{t.hero.title}</h1>
-    <p class="text-xl md:text-2xl mb-8 text-secondaryDark/40 leading-relaxed">{t.hero.subtitle}</p>
-    <a href={getMenuLink('contact', currentLang)} class="inline-block bg-white text-secondary font-bold py-4 px-8 rounded-lg hover:bg-secondary/10 transition text-lg shadow-lg hover:shadow-xl">
-      {t.hero.cta}
-    </a>
+<section class="bg-gradient-to-br from-primary to-primaryDark text-white py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      {title}
+    </h1>
+    {subtitle && (
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondaryDark/40">
+        {subtitle}
+      </h2>
+    )}
+    {description && (
+      <p class="text-xl text-secondaryDark/40 leading-relaxed">
+        {description}
+      </p>
+    )}
   </div>
 </section>
