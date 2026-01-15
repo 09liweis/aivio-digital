@@ -12,8 +12,8 @@ const t = translations[currentLang as keyof typeof translations];
 <section class="min-h-[80vh] bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
   <div class="text-center text-white px-4 max-w-4xl mx-auto">
     <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">{t.hero.title}</h1>
-    <p class="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">{t.hero.subtitle}</p>
-    <a href={currentLang === 'en' ? '/contact' : '/zh/contact'} class="inline-block bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-blue-50 transition text-lg shadow-lg hover:shadow-xl">
+    <p class="text-xl md:text-2xl mb-8 text-secondaryDark/40 leading-relaxed">{t.hero.subtitle}</p>
+    <a href={currentLang === 'en' ? '/contact' : '/zh/contact'} class="inline-block bg-white text-secondary font-bold py-4 px-8 rounded-lg hover:bg-secondary/10 transition text-lg shadow-lg hover:shadow-xl">
       {t.hero.cta}
     </a>
   </div>

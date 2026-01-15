@@ -21,7 +21,7 @@ export function getStaticPaths() {
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero / Title -->
-    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
+    <section class="bg-gradient-to-br from-primary to-primaryDark text-white py-16 px-4">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
           {content.title}
@@ -29,25 +29,25 @@ export function getStaticPaths() {
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
           <div class="grid md:grid-cols-2 gap-4 text-sm md:text-base">
             <div class="flex items-start gap-2">
-              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 flex-shrink-0 text-secondaryDark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
               <span>{content.metadata.industry}</span>
             </div>
             <div class="flex items-start gap-2">
-              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 flex-shrink-0 text-secondaryDark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0l4.244 4.243a8 8 0 010 11.314l-4.244 4.243a8 8 0 01-11.314 0l-4.244-4.243a8 8 0 010-11.314l4.244-4.243a8 8 0 0111.314 0l4.244 4.243a8 8 0 010 11.314l-4.244 4.243a8 8 0 01-11.314 0z"></path>
               </svg>
               <span>{content.metadata.location}</span>
             </div>
             <div class="flex items-start gap-2">
-              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 flex-shrink-0 text-secondaryDark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 3 3 3 3 .895 3 2-1.343 3-3 3m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 1v8m0 1v8m0 1v8m0 1v8"></path>
               </svg>
               <span>{content.metadata.spend}</span>
             </div>
             <div class="flex items-start gap-2">
-              <svg class="w-5 h-5 flex-shrink-0 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 flex-shrink-0 text-secondaryDark/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V9a2 2 0 012-2m6 2v2m0-2v2m0 2v2"></path>
               </svg>
               <span>{content.metadata.type}</span>
@@ -110,7 +110,7 @@ export function getStaticPaths() {
           {content.diagnosis.description}
         </p>
         <div class="space-y-6">
-          <div class="border-l-4 border-blue-600 pl-6">
+          <div class="border-l-4 border-secondary pl-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
               {content.diagnosis.landingPage.title}
             </h3>
@@ -118,7 +118,7 @@ export function getStaticPaths() {
               {content.diagnosis.landingPage.description}
             </p>
           </div>
-          <div class="border-l-4 border-blue-600 pl-6">
+          <div class="border-l-4 border-secondary pl-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
               {content.diagnosis.trust.title}
             </h3>
@@ -126,7 +126,7 @@ export function getStaticPaths() {
               {content.diagnosis.trust.description}
             </p>
           </div>
-          <div class="border-l-4 border-blue-600 pl-6">
+          <div class="border-l-4 border-secondary pl-6">
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
               {content.diagnosis.budget.title}
             </h3>
@@ -154,11 +154,11 @@ export function getStaticPaths() {
             </h3>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
-                <span class="text-blue-600 mr-3 mt-1">·</span>
+                <span class="text-secondary mr-3 mt-1">·</span>
                 <span>{content.optimization.landingPage.point1}</span>
               </li>
               <li class="flex items-start">
-                <span class="text-blue-600 mr-3 mt-1">·</span>
+                <span class="text-secondary mr-3 mt-1">·</span>
                 <span>{content.optimization.landingPage.point2}</span>
               </li>
             </ul>
@@ -184,7 +184,7 @@ export function getStaticPaths() {
     </section>
 
     <!-- Results & Impact -->
-    <section class="py-16 px-4 bg-green-50">
+    <section class="py-16 px-4 bg-secondary/10">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
           {content.results.title}
@@ -220,24 +220,24 @@ export function getStaticPaths() {
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           {content.takeaway.title}
         </h2>
-        <p class="text-xl text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-6">
+        <p class="text-xl text-gray-700 leading-relaxed border-l-4 border-secondary pl-6">
           {content.takeaway.description}
         </p>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primaryDark text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           {content.cta.title}
         </h2>
-        <p class="text-xl text-blue-100 mb-8">
+        <p class="text-xl text-secondaryDark/40 mb-8">
           {content.cta.description}
         </p>
         <a
           href={`/${currentLang === 'en' ? 'en' : 'zh'}/contact`}
-          class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg shadow-md hover:shadow-lg"
+          class="inline-block bg-white text-secondary font-semibold px-8 py-4 rounded-lg hover:bg-secondary/10 transition-colors text-lg shadow-md hover:shadow-lg"
         >
           {content.cta.button}
         </a>

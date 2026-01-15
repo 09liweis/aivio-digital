@@ -21,15 +21,15 @@ export function getStaticPaths() {
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+    <section class="bg-gradient-to-br from-primary to-primaryDark text-white py-20 px-4">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
           {content.hero.title}
         </h1>
-        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-blue-100">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondaryDark/40">
           {content.hero.subtitle}
         </h2>
-        <p class="text-xl text-blue-100 leading-relaxed">
+        <p class="text-xl text-secondaryDark/40 leading-relaxed">
           {content.hero.description}
         </p>
       </div>
@@ -42,7 +42,7 @@ export function getStaticPaths() {
           {content.whyWorkWithUs.title}
         </h2>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-blue-50 p-6 rounded-lg">
+          <div class="bg-secondary/10 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
               {content.whyWorkWithUs.management.title}
             </h3>
@@ -50,7 +50,7 @@ export function getStaticPaths() {
               {content.whyWorkWithUs.management.description}
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
+          <div class="bg-secondary/10 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
               {content.whyWorkWithUs.strategy.title}
             </h3>
@@ -58,7 +58,7 @@ export function getStaticPaths() {
               {content.whyWorkWithUs.strategy.description}
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
+          <div class="bg-secondary/10 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
               {content.whyWorkWithUs.conversion.title}
             </h3>
@@ -66,7 +66,7 @@ export function getStaticPaths() {
               {content.whyWorkWithUs.conversion.description}
             </p>
           </div>
-          <div class="bg-blue-50 p-6 rounded-lg">
+          <div class="bg-secondary/10 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
               {content.whyWorkWithUs.reporting.title}
             </h3>
@@ -135,7 +135,7 @@ export function getStaticPaths() {
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
           {content.oneTimeSetup.title}
         </h2>
-        <p class="text-lg text-blue-600 font-semibold mb-4 text-center">
+        <p class="text-lg text-secondary font-semibold mb-4 text-center">
           {content.oneTimeSetup.subtitle}
         </p>
         <p class="text-gray-700 mb-8 text-center">
@@ -146,27 +146,27 @@ export function getStaticPaths() {
         </h3>
         <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point4}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point5}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.oneTimeSetup.point6}</span>
           </li>
         </ul>
@@ -177,12 +177,12 @@ export function getStaticPaths() {
     </section>
 
     <!-- Ongoing Management -->
-    <section class="py-16 px-4 bg-blue-50">
+    <section class="py-16 px-4 bg-secondary/10">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
           {content.ongoingManagement.title}
         </h2>
-        <p class="text-lg text-blue-600 font-semibold mb-4 text-center">
+        <p class="text-lg text-secondary font-semibold mb-4 text-center">
           {content.ongoingManagement.subtitle}
         </p>
         <p class="text-gray-700 mb-8 text-center">
@@ -193,23 +193,23 @@ export function getStaticPaths() {
         </h3>
         <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.ongoingManagement.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.ongoingManagement.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.ongoingManagement.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.ongoingManagement.point4}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.ongoingManagement.point5}</span>
           </li>
         </ul>
@@ -224,23 +224,23 @@ export function getStaticPaths() {
         </h2>
         <ul class="space-y-4 text-gray-700 max-w-2xl mx-auto">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point4}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point5}</span>
           </li>
         </ul>
@@ -258,7 +258,7 @@ export function getStaticPaths() {
         </p>
         <a
           href={`mailto:hello@aivio.digital?subject=Google Ads Audit Request`}
-          class="inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg shadow-md hover:shadow-lg"
+          class="inline-block bg-secondary text-white font-semibold px-8 py-4 rounded-lg hover:bg-secondaryDark transition-colors text-lg shadow-md hover:shadow-lg"
         >
           {content.notSure.button}
         </a>
@@ -275,7 +275,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q1.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
@@ -286,7 +286,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q2.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
@@ -297,7 +297,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q3.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
@@ -308,7 +308,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q4.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
@@ -319,7 +319,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q5.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
@@ -330,7 +330,7 @@ export function getStaticPaths() {
           <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q6.question}
-              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>

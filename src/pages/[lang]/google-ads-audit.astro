@@ -21,12 +21,12 @@ export function getStaticPaths() {
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+    <section class="bg-gradient-to-br from-primary to-primaryDark text-white py-20 px-4">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
           {content.hero.title}
         </h1>
-        <p class="text-xl md:text-2xl text-blue-100 leading-relaxed">
+        <p class="text-xl md:text-2xl text-secondaryDark/40 leading-relaxed">
           {content.hero.subtitle}
         </p>
       </div>
@@ -43,19 +43,19 @@ export function getStaticPaths() {
         </p>
         <ul class="space-y-4 text-gray-700">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whyAuditMatters.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whyAuditMatters.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whyAuditMatters.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whyAuditMatters.point4}</span>
           </li>
         </ul>
@@ -132,23 +132,23 @@ export function getStaticPaths() {
         </h2>
         <ul class="space-y-4 text-gray-700">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whatYouReceive.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whatYouReceive.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whatYouReceive.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whatYouReceive.point4}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.whatYouReceive.point5}</span>
           </li>
         </ul>
@@ -159,26 +159,26 @@ export function getStaticPaths() {
     </section>
 
     <!-- Best Fit For -->
-    <section class="py-16 px-4 bg-blue-50">
+    <section class="py-16 px-4 bg-secondary/10">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
           {content.bestFitFor.title}
         </h2>
         <ul class="space-y-4 text-gray-700">
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point1}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point2}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point3}</span>
           </li>
           <li class="flex items-start">
-            <span class="text-blue-600 mr-3 mt-1">·</span>
+            <span class="text-secondary mr-3 mt-1">·</span>
             <span>{content.bestFitFor.point4}</span>
           </li>
         </ul>
@@ -196,15 +196,15 @@ export function getStaticPaths() {
         </p>
         <ol class="space-y-6 text-gray-700">
           <li class="flex items-start">
-            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</span>
+            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</span>
             <span class="pt-1">{content.afterAudit.option1}</span>
           </li>
           <li class="flex items-start">
-            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</span>
+            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</span>
             <span class="pt-1">{content.afterAudit.option2}</span>
           </li>
           <li class="flex items-start">
-            <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</span>
+            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</span>
             <span class="pt-1">{content.afterAudit.option3}</span>
           </li>
         </ol>
@@ -215,17 +215,17 @@ export function getStaticPaths() {
     </section>
 
     <!-- Ready CTA -->
-    <section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primaryDark text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           {content.ready.title}
         </h2>
-        <p class="text-xl text-blue-100 mb-8">
+        <p class="text-xl text-secondaryDark/40 mb-8">
           {content.ready.subtitle}
         </p>
         <a
           href={`mailto:hello@aivio.digital?subject=Google Ads Audit Request`}
-          class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg"
+          class="inline-block bg-white text-secondary font-semibold px-8 py-4 rounded-lg hover:bg-secondary/10 transition-colors text-lg"
         >
           {content.ready.button}
         </a>

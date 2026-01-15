@@ -21,7 +21,7 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
       <!-- Service Card 1 -->
       <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition border border-gray-100">
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+          <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
             </svg>
@@ -30,10 +30,10 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
         </div>
         <p class="text-lg font-semibold text-gray-800 mb-4">{t.services.audit.subtitle}</p>
         <p class="text-gray-600 mb-6 leading-relaxed">{t.services.audit.description}</p>
-        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+        <div class="bg-secondary/10 p-4 rounded-lg mb-6">
           <p class="text-sm text-gray-700"><strong>Best for:</strong> {t.services.audit.bestFor}</p>
         </div>
-        <a href={`${basePath}/google-ads-audit`} class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition">
+        <a href={`${basePath}/google-ads-audit`} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
           {t.services.audit.learnMore}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -44,7 +44,7 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
       <!-- Service Card 2 -->
       <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition border border-gray-100">
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+          <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
@@ -53,10 +53,10 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
         </div>
         <p class="text-lg font-semibold text-gray-800 mb-4">{t.services.management.subtitle}</p>
         <p class="text-gray-600 mb-6 leading-relaxed">{t.services.management.description}</p>
-        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+        <div class="bg-secondary/10 p-4 rounded-lg mb-6">
           <p class="text-sm text-gray-700"><strong>Best for:</strong> {t.services.management.bestFor}</p>
         </div>
-        <a href={`${basePath}/google-ads-management`} class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition">
+        <a href={`${basePath}/google-ads-management`} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
           {t.services.management.learnMore}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
