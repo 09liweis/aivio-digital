@@ -22,9 +22,9 @@ export function getStaticPaths() {
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Case Study has a special hero with metadata, so keep it as is -->
-    <section class="bg-gradient-to-br from-primary to-primaryDark text-white py-16 px-4">
+    <section class="bg-gradient-to-br from-primary to-primaryDark py-16 px-4">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 leading-tight text-secondaryDark">
           {content.title}
         </h1>
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
