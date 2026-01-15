@@ -5,7 +5,8 @@ import { translations } from '../../i18n';
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
-const t = translations[currentLang].contactUs;
+const t = translations[currentLang];
+const pageTitle = t.pageTitle.contactUs;
 
 export function getStaticPaths() {
   return [
@@ -15,7 +16,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={currentLang === 'zh' ? '联系我们 | Aivio Digital' : 'Contact Us | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+<Layout title={pageTitle} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">

@@ -7,11 +7,13 @@ import Testimonials from '../components/Testimonials.astro';
 import CaseStudy from '../components/CaseStudy.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import FAQs from '../components/FAQs.astro';
+import { translations } from '../i18n/index';
 
 // Get the language from the URL parameter
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
+const t = translations[currentLang as keyof typeof translations];
 
 // Generate static paths for language variants
 export function getStaticPaths() {
@@ -22,7 +24,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={currentLang === 'zh' ? '首页 | Aivio Digital' : 'Home | Aivio Digital'} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+<Layout title={t.pageTitle.home} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main>
     <Hero currentLang={currentLang} />
     <Services currentLang={currentLang} />

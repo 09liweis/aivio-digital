@@ -1,4 +1,12 @@
 export const zh = {
+  pageTitle: {
+    home: '首页 | Aivio Digital',
+    googleAdsAudit: 'Google 广告审计 | Aivio Digital',
+    googleAdsManagement: 'Google 广告管理 | Aivio Digital',
+    caseStudy: '案例分析 | Aivio Digital',
+    aboutUs: '关于我们 | Aivio Digital',
+    contactUs: '联系我们 | Aivio Digital',
+  },
   nav: {
     home: '首页',
     googleAdsAudit: 'Google 广告账户审计',

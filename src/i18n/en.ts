@@ -1,4 +1,12 @@
 export const en = {
+  pageTitle: {
+    home: 'Home | Aivio Digital',
+    googleAdsAudit: 'Google Ads Audit | Aivio Digital',
+    googleAdsManagement: 'Google Ads Management | Aivio Digital',
+    caseStudy: 'Case Study | Aivio Digital',
+    aboutUs: 'About Us | Aivio Digital',
+    contactUs: 'Contact Us | Aivio Digital',
+  },
   nav: {
     home: 'Home',
     googleAdsAudit: 'Google Ads Audit',
