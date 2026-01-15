@@ -10,6 +10,7 @@ export function getMenuItems(currentLang: string): MenuItem[] {
     { key: 'googleAdsManagement', href: `/${currentLang}/google-ads-management` },
     { key: 'caseStudy', href: `/${currentLang}/case-study` },
     { key: 'aboutUs', href: `/${currentLang}/about-us` },
+    { key: 'blog', href: `/${currentLang}/blog` },
     { key: 'contactUs', href: `/${currentLang}/contact` },
   ];
 }
