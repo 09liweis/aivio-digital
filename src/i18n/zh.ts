@@ -24,14 +24,14 @@ export const zh = {
       description: '联系 Aivio Digital 获取 Google 广告审计和管理服务。获得专家帮助，提高广告效果和投资回报率。',
       keywords: '联系 Aivio Digital, Google 广告咨询, PPC 服务, 获取 Google 广告帮助',
     },
-    blog: {
+    blogs: {
       description: '来自 Aivio Digital 专家的最新见解、技巧和策略，涵盖数字营销、Google 广告、SEO 和业务增长。',
       keywords: '数字营销博客, Google 广告技巧, SEO 策略, 营销见解, 业务增长',
     },
   },
   pageTitle: {
     home: '首页 | Aivio Digital',
-    blog: '博客 | Aivio Digital',
+    blogs: '博客 | Aivio Digital',
     googleAdsAudit: 'Google 广告审计 | Aivio Digital',
     googleAdsManagement: 'Google 广告管理 | Aivio Digital',
     caseStudy: '案例分析 | Aivio Digital',
@@ -42,6 +42,7 @@ export const zh = {
     home: '首页',
     googleAdsAudit: 'Google 广告账户审计',
     googleAdsManagement: 'Google 广告账户管理',
+    blogs: '博客',
     caseStudy: '案例分析',
     aboutUs: '关于我们',
     blog: '博客',
@@ -483,7 +484,7 @@ export const zh = {
       },
     },
   },
-  blog: {
+  blogs: {
     title: '博客',
     subtitle: '数字营销成功的见解、技巧和策略',
     readMore: '阅读更多',

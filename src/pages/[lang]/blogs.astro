@@ -7,9 +7,9 @@ const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
 const t = translations[currentLang];
-const pageTitle = t.pageTitle.blog;
-const pageMeta = t.pageMeta.blog;
-const blogContent = t.blog;
+const pageTitle = t.pageTitle.blogs;
+const pageMeta = t.pageMeta.blogs;
+const blogContent = t.blogs;
 const posts = blogPosts[currentLang];
 
 export function getStaticPaths() {
@@ -64,7 +64,7 @@ export function getStaticPaths() {
                 </p>
 
                 <a
-                  href={`/${currentLang === 'en' ? 'blog' : 'blog'}/${post.id}`}
+                  href={`/${currentLang === 'en' ? 'blogs' : 'blogs'}/${post.id}`}
                   class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition"
                 >
                   {blogContent.readMore}

@@ -24,14 +24,14 @@ export const en = {
       description: 'Contact Aivio Digital for Google Ads Audit and Management services. Get expert help to improve your ad performance and ROI.',
       keywords: 'Contact Aivio Digital, Google Ads Consultation, PPC Services, Get Google Ads Help',
     },
-    blog: {
+    blogs: {
       description: 'Latest insights, tips, and strategies for digital marketing, Google Ads, SEO, and business growth from Aivio Digital experts.',
       keywords: 'Digital Marketing Blog, Google Ads Tips, SEO Strategies, Marketing Insights, Business Growth',
     },
   },
   pageTitle: {
     home: 'Home | Aivio Digital',
-    blog: 'Blog | Aivio Digital',
+    blogs: 'Blogs | Aivio Digital',
     googleAdsAudit: 'Google Ads Audit | Aivio Digital',
     googleAdsManagement: 'Google Ads Management | Aivio Digital',
     caseStudy: 'Case Study | Aivio Digital',
@@ -42,9 +42,9 @@ export const en = {
     home: 'Home',
     googleAdsAudit: 'Google Ads Audit',
     googleAdsManagement: 'Google Ads Management',
+    blogs: 'Blog',
     caseStudy: 'Case Study',
     aboutUs: 'About Us',
-    blog: 'Blog',
     contactUs: 'Contact Us',
     getAudit: 'Get a Google Ads Account Audit',
   },
@@ -483,8 +483,8 @@ export const en = {
       },
     },
   },
-  blog: {
-    title: 'Blog',
+  blogs: {
+    title: 'Blogs',
     subtitle: 'Insights, Tips, and Strategies for Digital Marketing Success',
     readMore: 'Read More',
     related: 'Related Articles',

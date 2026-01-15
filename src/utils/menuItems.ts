@@ -1,5 +1,5 @@
 export interface MenuItem {
-  key: 'home' | 'googleAdsAudit' | 'googleAdsManagement' | 'caseStudy' | 'aboutUs' | 'blog' | 'contactUs';
+  key: 'home' | 'googleAdsAudit' | 'googleAdsManagement' | 'caseStudy' | 'aboutUs' | 'blogs' | 'contactUs';
   href: string;
 }
 
@@ -10,7 +10,7 @@ export function getMenuItems(currentLang: string): MenuItem[] {
     { key: 'googleAdsManagement', href: `/${currentLang}/google-ads-management` },
     { key: 'caseStudy', href: `/${currentLang}/case-study` },
     { key: 'aboutUs', href: `/${currentLang}/about-us` },
-    { key: 'blog', href: `/${currentLang}/blog` },
+    { key: 'blogs', href: `/${currentLang}/blogs` },
     { key: 'contactUs', href: `/${currentLang}/contact` },
   ];
 }
@@ -21,6 +21,6 @@ export function getHeaderMenuItems(currentLang: string): MenuItem[] {
     { key: 'googleAdsManagement', href: `/${currentLang}/google-ads-management` },
     { key: 'caseStudy', href: `/${currentLang}/case-study` },
     { key: 'aboutUs', href: `/${currentLang}/about-us` },
-    { key: 'blog', href: `/${currentLang}/blog` },
+    { key: 'blogs', href: `/${currentLang}/blogs` },
   ];
 }
