@@ -1,26 +1,28 @@
 export interface MenuItem {
-  key: 'home' | 'googleAdsAudit' | 'googleAdsManagement' | 'caseStudy' | 'aboutUs' | 'blogs' | 'contactUs';
+  key: 'googleAdsAudit' | 'googleAdsManagement' | 'caseStudy' | 'aboutUs' | 'blogs' | 'contactUs';
   href: string;
 }
+export const getMenuLink = (key: string, currentLang: string): string => {
+  return `/${currentLang}/${key}`;
+};
 
 export function getMenuItems(currentLang: string): MenuItem[] {
   return [
-    { key: 'home', href: `/${currentLang}` },
-    { key: 'googleAdsAudit', href: `/${currentLang}/google-ads-audit` },
-    { key: 'googleAdsManagement', href: `/${currentLang}/google-ads-management` },
-    { key: 'caseStudy', href: `/${currentLang}/case-study` },
-    { key: 'aboutUs', href: `/${currentLang}/about-us` },
-    { key: 'blogs', href: `/${currentLang}/blogs` },
-    { key: 'contactUs', href: `/${currentLang}/contact` },
+    { key: 'googleAdsAudit', href: getMenuLink('google-ads-audit', currentLang) },
+    { key: 'googleAdsManagement', href: getMenuLink('google-ads-management', currentLang) },
+    { key: 'caseStudy', href: getMenuLink('case-study', currentLang) },
+    { key: 'aboutUs', href: getMenuLink('about-us', currentLang) },
+    { key: 'blogs', href: getMenuLink('blogs', currentLang) },
+    { key: 'contactUs', href: getMenuLink('contact', currentLang) },
   ];
 }
 
 export function getHeaderMenuItems(currentLang: string): MenuItem[] {
   return [
-    { key: 'googleAdsAudit', href: `/${currentLang}/google-ads-audit` },
-    { key: 'googleAdsManagement', href: `/${currentLang}/google-ads-management` },
-    { key: 'caseStudy', href: `/${currentLang}/case-study` },
-    { key: 'aboutUs', href: `/${currentLang}/about-us` },
-    { key: 'blogs', href: `/${currentLang}/blogs` },
+    { key: 'googleAdsAudit', href: getMenuLink('google-ads-audit', currentLang) },
+    { key: 'googleAdsManagement', href: getMenuLink('google-ads-management', currentLang) },
+    { key: 'caseStudy', href: getMenuLink('case-study', currentLang) },
+    { key: 'aboutUs', href: getMenuLink('about-us', currentLang) },
+    { key: 'blogs', href: getMenuLink('blogs', currentLang) },
   ];
 }
