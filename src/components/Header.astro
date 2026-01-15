@@ -35,8 +35,8 @@ const isActive = (href: string) => {
 <header class="bg-white shadow-md sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex justify-between items-center">
-      <a href={currentLang === 'en' ? '/en' : '/zh'} class="text-2xl font-bold text-secondary hover:text-secondaryDark transition">
-        Aivio Digital
+      <a href={getMenuLink('', currentLang)} class="flex items-center gap-2 text-2xl font-bold text-secondary hover:text-secondaryDark transition">
+        <img src="/assets/logo.png" alt="Aivio Digital" class="h-20 w-auto" />
       </a>
       
       <ul class="flex items-center gap-1">
