@@ -153,6 +153,7 @@ export const en = {
     contact: 'Contact',
     email: 'Email',
     phone: 'Phone',
+    copyright: '© {year} Aivio Digital. All rights reserved.',
   },
   caseStudy: {
     title: 'Case Study: Google Ads Optimization for a Toronto Custom Packaging Company',

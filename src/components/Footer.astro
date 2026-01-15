@@ -11,6 +11,7 @@ const { currentLang } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
 const currentYear = new Date().getFullYear();
 const menuItems = getMenuItems(currentLang);
+const copyrightText = t.footer.copyright.replace('{year}', String(currentYear));
 ---
 
 <footer class="bg-gray-900 text-white py-12">
@@ -45,7 +46,7 @@ const menuItems = getMenuItems(currentLang);
       </div>
     </div>
     <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-      <p>&copy; {currentYear} Aivio Digital. All rights reserved.</p>
+      <p>{copyrightText}</p>
     </div>
   </div>
 </footer>

@@ -154,6 +154,7 @@ export const zh = {
     contact: '联系方式',
     email: '邮箱',
     phone: '电话',
+    copyright: '© {year} Aivio Digital. 版权所有。',
   },
   caseStudy: {
     title: '案例分析：多伦多定制包装公司的 Google 广告优化',
