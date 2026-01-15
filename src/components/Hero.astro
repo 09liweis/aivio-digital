@@ -1,27 +1,51 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
   description?: string;
+  currentLang?: 'en' | 'zh';
 }
 
-const { title, subtitle, description } = Astro.props;
+import { translations } from '../i18n';
+
+const { title, subtitle, description, currentLang } = Astro.props;
+
+// If currentLang is provided, use translations (for home page)
+const isHomePage = currentLang !== undefined;
+const heroTitle = isHomePage ? translations[currentLang].hero.title : title!;
+const heroSubtitle = isHomePage ? translations[currentLang].hero.subtitle : subtitle;
+const heroDescription = isHomePage ? translations[currentLang].hero.subtitle : description;
+const heroCTA = isHomePage ? translations[currentLang].hero.cta : undefined;
 ---
 
-<section class="bg-gradient-to-br from-primary to-primaryDark py-20 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-secondaryDark">
-      {title}
-    </h1>
-    {subtitle && (
-      <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondaryDark/40">
-        {subtitle}
-      </h2>
-    )}
-    {description && (
-      <p class="text-xl text-secondaryDark/40 leading-relaxed">
-        {description}
-      </p>
-    )}
+<section class="bg-gradient-to-br from-primary to-primaryDark py-16 md:py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="text-center md:text-left order-2 md:order-1">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-secondaryDark">
+          {heroTitle}
+        </h1>
+        {heroSubtitle && (
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-secondaryDark/40 leading-relaxed">
+            {heroSubtitle}
+          </h2>
+        )}
+        {heroCTA && (
+          <a
+            href={`mailto:hello@aivio.digital?subject=Talk to Google Ads Expert`}
+            class="inline-block bg-secondary text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-lg hover:bg-secondaryDark transition-colors text-lg shadow-md hover:shadow-lg"
+          >
+            {heroCTA}
+          </a>
+        )}
+      </div>
+      <div class="order-1 md:order-2">
+        <img
+          src="/assets/google.png"
+          alt="Google Ads Services"
+          class="w-full h-auto rounded-lg shadow-xl"
+        />
+      </div>
+    </div>
   </div>
 </section>
