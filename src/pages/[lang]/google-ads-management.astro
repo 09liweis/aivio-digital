@@ -7,6 +7,7 @@ const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
 const t = translations[currentLang];
 const pageTitle = t.pageTitle.googleAdsManagement;
+const pageMeta = t.pageMeta.googleAdsManagement;
 const content = t.googleAdsManagement;
 
 export function getStaticPaths() {
@@ -17,7 +18,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={pageTitle} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+<Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">

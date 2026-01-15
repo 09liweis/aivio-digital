@@ -1,4 +1,30 @@
 export const en = {
+  pageMeta: {
+    home: {
+      description: 'Aivio Digital helps small businesses grow with expert Google Ads management and audit services in Toronto. Get more qualified leads and improve your ROI.',
+      keywords: 'Google Ads, Google Ads Management, Google Ads Audit, Toronto Google Ads Expert, PPC Management, Small Business Marketing',
+    },
+    googleAdsAudit: {
+      description: 'Professional Google Ads Audit service. Find wasted spend, fix tracking issues, and optimize your campaigns for better performance and ROI.',
+      keywords: 'Google Ads Audit, PPC Audit, Google Ads Optimization, Campaign Audit, Ad Performance Review',
+    },
+    googleAdsManagement: {
+      description: 'Expert Google Ads Management services for small businesses. Turn ad spend into qualified leads with transparent reporting and data-driven strategies.',
+      keywords: 'Google Ads Management, PPC Management, Google Ads Expert, Campaign Management, Digital Advertising',
+    },
+    caseStudy: {
+      description: 'See how Aivio Digital helped a Toronto packaging company improve lead quality by 40% with Google Ads optimization.',
+      keywords: 'Google Ads Case Study, PPC Success Story, Lead Generation Case Study, Google Ads Optimization Results',
+    },
+    aboutUs: {
+      description: 'Learn about Aivio Digital - Google Ads experts helping small businesses in Toronto grow with transparent, data-driven advertising strategies.',
+      keywords: 'About Aivio Digital, Google Ads Agency Toronto, PPC Experts, Digital Marketing Agency',
+    },
+    contactUs: {
+      description: 'Contact Aivio Digital for Google Ads Audit and Management services. Get expert help to improve your ad performance and ROI.',
+      keywords: 'Contact Aivio Digital, Google Ads Consultation, PPC Services, Get Google Ads Help',
+    },
+  },
   pageTitle: {
     home: 'Home | Aivio Digital',
     googleAdsAudit: 'Google Ads Audit | Aivio Digital',

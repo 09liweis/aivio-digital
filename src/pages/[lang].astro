@@ -14,6 +14,8 @@ const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
 const t = translations[currentLang as keyof typeof translations];
+const pageTitle = t.pageTitle.home;
+const pageMeta = t.pageMeta.home;
 
 // Generate static paths for language variants
 export function getStaticPaths() {
@@ -24,7 +26,7 @@ export function getStaticPaths() {
 }
 ---
 
-<Layout title={t.pageTitle.home} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
+<Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main>
     <Hero currentLang={currentLang} />
     <Services currentLang={currentLang} />

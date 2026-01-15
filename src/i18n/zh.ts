@@ -1,4 +1,30 @@
 export const zh = {
+  pageMeta: {
+    home: {
+      description: 'Aivio Digital 帮助中小企业通过专业的 Google 广告管理和审计服务实现增长。获取更多合格潜在客户，提高投资回报率。',
+      keywords: 'Google 广告, Google 广告管理, Google 广告审计, 多伦多 Google 广告专家, PPC 管理, 中小企业营销',
+    },
+    googleAdsAudit: {
+      description: '专业的 Google 广告审计服务。发现浪费的支出，修复跟踪问题，优化您的广告活动以获得更好的性能和投资回报率。',
+      keywords: 'Google 广告审计, PPC 审计, Google 广告优化, 广告活动审计, 广告效果评估',
+    },
+    googleAdsManagement: {
+      description: '为中小企业提供专家级 Google 广告管理服务。通过透明报告和数据驱动策略，将广告预算转化为合格的潜在客户。',
+      keywords: 'Google 广告管理, PPC 管理, Google 广告专家, 广告活动管理, 数字广告',
+    },
+    caseStudy: {
+      description: '了解 Aivio Digital 如何帮助多伦多一家包装公司通过 Google 广告优化将潜在客户质量提高了40%。',
+      keywords: 'Google 广告案例, PPC 成功案例, 潜在客户生成案例, Google 广告优化结果',
+    },
+    aboutUs: {
+      description: '了解 Aivio Digital - 帮助多伦多中小企业通过透明、数据驱动的广告策略增长的 Google 广告专家。',
+      keywords: '关于 Aivio Digital, 多伦多 Google 广告代理, PPC 专家, 数字营销代理',
+    },
+    contactUs: {
+      description: '联系 Aivio Digital 获取 Google 广告审计和管理服务。获得专家帮助，提高广告效果和投资回报率。',
+      keywords: '联系 Aivio Digital, Google 广告咨询, PPC 服务, 获取 Google 广告帮助',
+    },
+  },
   pageTitle: {
     home: '首页 | Aivio Digital',
     googleAdsAudit: 'Google 广告审计 | Aivio Digital',

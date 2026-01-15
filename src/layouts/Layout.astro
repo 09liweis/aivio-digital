@@ -5,19 +5,22 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
+  description?: string;
+  keywords?: string;
   lang?: string;
   currentLang?: string;
   currentPath?: string;
 }
 
-const { title, lang = 'en', currentLang = 'en', currentPath = '/' } = Astro.props;
+const { title, description, keywords, lang = 'en', currentLang = 'en', currentPath = '/' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro website with TailwindCSS and i18n support" />
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords} />}
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
