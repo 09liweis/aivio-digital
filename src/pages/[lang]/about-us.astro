@@ -7,6 +7,7 @@ const currentLang = (lang || 'en') as 'en' | 'zh';
 const currentPath = Astro.url.pathname;
 const t = translations[currentLang];
 const pageTitle = t.pageTitle.aboutUs;
+const content = t.aboutUs;
 
 export function getStaticPaths() {
   return [
@@ -22,10 +23,10 @@ export function getStaticPaths() {
     <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          {t.hero.title}
+          {content.hero.title}
         </h1>
         <p class="text-xl text-blue-100 leading-relaxed">
-          {t.hero.description}
+          {content.hero.description}
         </p>
       </div>
     </section>
@@ -34,10 +35,10 @@ export function getStaticPaths() {
     <section class="py-16 px-4 bg-white">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {t.ourStory.title}
+          {content.ourStory.title}
         </h2>
         <p class="text-lg text-gray-700 leading-relaxed text-center">
-          {t.ourStory.description}
+          {content.ourStory.description}
         </p>
       </div>
     </section>
@@ -46,27 +47,27 @@ export function getStaticPaths() {
     <section class="py-16 px-4 bg-gray-50">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {t.ourApproach.title}
+          {content.ourApproach.title}
         </h2>
         <p class="text-lg text-gray-700 mb-8 text-center">
-          {t.ourApproach.description}
+          {content.ourApproach.description}
         </p>
         <ul class="space-y-6 text-gray-700">
           <li class="flex items-start">
             <span class="text-blue-600 mr-3 mt-1">·</span>
-            <span>{t.ourApproach.audit}</span>
+            <span>{content.ourApproach.audit}</span>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 mr-3 mt-1">·</span>
-            <span>{t.ourApproach.strategy}</span>
+            <span>{content.ourApproach.strategy}</span>
           </li>
           <li class="flex items-start">
             <span class="text-blue-600 mr-3 mt-1">·</span>
-            <span>{t.ourApproach.management}</span>
+            <span>{content.ourApproach.management}</span>
           </li>
         </ul>
         <p class="text-lg text-gray-600 mt-8 italic text-center">
-          {t.ourApproach.note}
+          {content.ourApproach.note}
         </p>
       </div>
     </section>
@@ -75,27 +76,27 @@ export function getStaticPaths() {
     <section class="py-16 px-4 bg-white">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          {t.whyChooseUs.title}
+          {content.whyChooseUs.title}
         </h2>
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-blue-50 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {t.whyChooseUs.expertise}
+              {content.whyChooseUs.expertise}
             </h3>
           </div>
           <div class="bg-blue-50 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {t.whyChooseUs.transparency}
+              {content.whyChooseUs.transparency}
             </h3>
           </div>
           <div class="bg-blue-50 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {t.whyChooseUs.personalized}
+              {content.whyChooseUs.personalized}
             </h3>
           </div>
           <div class="bg-blue-50 p-6 rounded-lg">
             <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {t.whyChooseUs.results}
+              {content.whyChooseUs.results}
             </h3>
           </div>
         </div>
@@ -106,10 +107,10 @@ export function getStaticPaths() {
     <section class="py-16 px-4 bg-gray-50">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {t.ourMission.title}
+          {content.ourMission.title}
         </h2>
         <p class="text-xl text-gray-700 leading-relaxed text-center">
-          {t.ourMission.description}
+          {content.ourMission.description}
         </p>
       </div>
     </section>
@@ -118,16 +119,16 @@ export function getStaticPaths() {
     <section class="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          {t.ready.title}
+          {content.ready.title}
         </h2>
         <p class="text-xl text-blue-100 mb-8">
-          {t.ready.description}
+          {content.ready.description}
         </p>
         <a
           href={`mailto:hello@aivio.digital?subject=Talk to Google Ads Expert`}
           class="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-lg shadow-md hover:shadow-lg"
         >
-          {t.ready.button}
+          {content.ready.button}
         </a>
       </div>
     </section>
