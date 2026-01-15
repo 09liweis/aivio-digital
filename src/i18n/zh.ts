@@ -6,6 +6,7 @@ export const zh = {
     caseStudy: '案例分析',
     aboutUs: '关于我们',
     blog: '博客',
+    contactUs: '联系我们',
     getAudit: '预约 Google Ads 审计服务',
   },
   hero: {
@@ -107,7 +108,12 @@ export const zh = {
     },
   },
   footer: {
-    copyright: '© 2025 Aivio Digital。版权所有。',
+    about: '关于我们',
+    aboutText: '帮助中小企业通过 Google 广告优化和管理实现增长。',
+    quickLinks: '快速链接',
+    contact: '联系方式',
+    email: '邮箱',
+    phone: '电话',
   },
   caseStudy: {
     title: '案例分析：多伦多定制包装公司的 Google 广告优化',

@@ -1,5 +1,6 @@
 ---
 import { languages, translations } from '../i18n/index';
+import { getHeaderMenuItems } from '../utils/menuItems';
 
 interface Props {
   currentLang: string;
@@ -8,16 +9,7 @@ interface Props {
 
 const { currentLang, currentPath = '/' } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
-const basePath = currentLang === 'en' ? 'en' : `${currentLang}`;
-
-const menuItems = [
-  // { key: 'home', href: currentLang === 'en' ? '/en' : '/zh' },
-  { key: 'googleAdsAudit', href: `/${basePath}/google-ads-audit` },
-  { key: 'googleAdsManagement', href: `/${basePath}/google-ads-management` },
-  { key: 'caseStudy', href: `/${basePath}/case-study` },
-  { key: 'aboutUs', href: `/${basePath}/about-us` },
-  { key: 'blog', href: `/${basePath}/blog` },
-];
+const menuItems = getHeaderMenuItems(currentLang);
 
 const isActive = (href: string) => {
   return currentPath.startsWith(href);
@@ -81,7 +73,7 @@ const isActive = (href: string) => {
           ))}
         </div>
 
-        <a href={`/${basePath}/contact`} class="bg-primary text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition text-sm shadow-md hover:shadow-lg">
+        <a href={currentLang === 'en' ? '/contact' : '/zh/contact'} class="bg-primary text-white font-semibold py-2 px-5 rounded-lg hover:bg-blue-700 transition text-sm shadow-md hover:shadow-lg">
           {t.nav.getAudit}
         </a>
       </div>

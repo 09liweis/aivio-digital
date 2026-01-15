@@ -25,7 +25,7 @@ const { title, lang = 'en', currentLang = 'en', currentPath = '/' } = Astro.prop
   <body>
     <Header currentLang={currentLang} currentPath={currentPath} />
     <slot />
-    <Footer currentLang={currentLang} />
+    <Footer currentLang={currentLang} currentPath={currentPath} />
     <script>
       // Language persistence
       const savedLang = localStorage.getItem('lang') || 'en';

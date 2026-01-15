@@ -6,6 +6,7 @@ export const en = {
     caseStudy: 'Case Study',
     aboutUs: 'About Us',
     blog: 'Blog',
+    contactUs: 'Contact Us',
     getAudit: 'Get a Google Ads Account Audit',
   },
   hero: {
@@ -107,7 +108,12 @@ export const en = {
     },
   },
   footer: {
-    copyright: '© 2025 Aivio Digital. All rights reserved.',
+    about: 'About',
+    aboutText: 'Helping small businesses grow with Google Ads optimization and management.',
+    quickLinks: 'Quick Links',
+    contact: 'Contact',
+    email: 'Email',
+    phone: 'Phone',
   },
   caseStudy: {
     title: 'Case Study: Google Ads Optimization for a Toronto Custom Packaging Company',
