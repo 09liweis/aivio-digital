@@ -52,7 +52,7 @@ const { posts, currentLang, readMoreText } = Astro.props;
             </p>
 
             <a
-              href={`/${currentLang === 'en' ? 'blogs' : 'blogs'}/${post.id}`}
+              href={`/${currentLang}/blog/${post.id}`}
               class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition-all duration-300 group/btn"
             >
               {readMoreText}
