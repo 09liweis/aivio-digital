@@ -1,0 +1,14 @@
+---
+interface Props {
+  text: string;
+  bgColor?: string;
+}
+
+const { text, bgColor = 'from-primary/10 to-secondary/10' } = Astro.props;
+---
+
+<div class={`bg-gradient-to-r ${bgColor} p-8 rounded-xl text-center`}>
+  <p class="text-lg text-gray-600 italic">
+    {text}
+  </p>
+</div>

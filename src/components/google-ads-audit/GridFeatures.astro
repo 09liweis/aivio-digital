@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  items: Array<{
+    text: string;
+    icon: string;
+  }>;
+  bgColor?: string;
+}
+
+const { title, items, bgColor = 'bg-gradient-to-br from-secondary/5 to-gray-50' } = Astro.props;
+---
+
+<section class={`py-20 px-4 ${bgColor}`}>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {title}
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      {items.map(item => (
+        <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+              </svg>
+            </div>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {item.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
