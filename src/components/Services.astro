@@ -1,5 +1,6 @@
 ---
 import { translations } from '../i18n/index';
+import { getMenuLink } from '../utils/menuItems';
 
 interface Props {
   currentLang: string;
@@ -7,7 +8,6 @@ interface Props {
 
 const { currentLang } = Astro.props;
 const t = translations[currentLang as keyof typeof translations];
-const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
 ---
 
 <section class="py-20 bg-gray-50">
@@ -33,7 +33,7 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
         <div class="bg-secondary/10 p-4 rounded-lg mb-6">
           <p class="text-sm text-gray-700"><strong>Best for:</strong> {t.services.audit.bestFor}</p>
         </div>
-        <a href={`${basePath}/google-ads-audit`} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
+        <a href={getMenuLink('google-ads-audit',currentLang)} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
           {t.services.audit.learnMore}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -56,7 +56,7 @@ const basePath = currentLang === 'en' ? '' : `/${currentLang}`;
         <div class="bg-secondary/10 p-4 rounded-lg mb-6">
           <p class="text-sm text-gray-700"><strong>Best for:</strong> {t.services.management.bestFor}</p>
         </div>
-        <a href={`${basePath}/google-ads-management`} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
+        <a href={getMenuLink('google-ads-management',currentLang)} class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition">
           {t.services.management.learnMore}
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
