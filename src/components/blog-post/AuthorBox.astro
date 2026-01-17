@@ -1,0 +1,125 @@
+---
+interface Props {
+  name: string;
+  role?: string;
+  bio?: string;
+  avatar?: string;
+}
+
+const { name, role = 'Digital Marketing Expert', bio, avatar } = Astro.props;
+---
+
+<div class="author-box">
+  <div class="container">
+    <div class="author-box-content">
+      <div class="author-avatar-large">
+        {avatar ? (
+          <img src={avatar} alt={name} />
+        ) : (
+          <span class="author-initial-large">{name.charAt(0)}</span>
+        )}
+      </div>
+      <div class="author-details">
+        <h3 class="author-name-large">{name}</h3>
+        <span class="author-role">{role}</span>
+        {bio && <p class="author-bio">{bio}</p>}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .author-box {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 60px 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .author-box-content {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .author-avatar-large {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+  }
+
+  .author-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .author-initial-large {
+    color: white;
+  }
+
+  .author-details {
+    flex: 1;
+  }
+
+  .author-name-large {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px;
+  }
+
+  .author-role {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .author-bio {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .author-box {
+      padding: 40px 0;
+    }
+
+    .author-box-content {
+      padding: 24px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .author-name-large {
+      font-size: 20px;
+    }
+  }
+</style>

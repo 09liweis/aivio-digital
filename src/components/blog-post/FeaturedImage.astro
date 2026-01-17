@@ -1,0 +1,47 @@
+---
+interface Props {
+  src?: string;
+  alt?: string;
+}
+
+const { src = '/assets/blog-placeholder.jpg', alt = 'Blog Featured Image' } = Astro.props;
+---
+
+<div class="featured-image">
+  <div class="image-container">
+    <img src={src} alt={alt} loading="eager" />
+  </div>
+</div>
+
+<style>
+  .featured-image {
+    background: #f8f9fa;
+    padding: 40px 0;
+  }
+
+  .image-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  @media (max-width: 768px) {
+    .featured-image {
+      padding: 20px 0;
+    }
+
+    img {
+      height: 300px;
+      border-radius: 12px;
+    }
+  }
+</style>

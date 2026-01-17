@@ -1,0 +1,244 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { blogPosts } from '../../../i18n/blog';
+import BlogHeader from '../../../components/blog-post/BlogHeader.astro';
+import FeaturedImage from '../../../components/blog-post/FeaturedImage.astro';
+import TableOfContents from '../../../components/blog-post/TableOfContents.astro';
+import BlogContent from '../../../components/blog-post/BlogContent.astro';
+import ShareButtons from '../../../components/blog-post/ShareButtons.astro';
+import AuthorBox from '../../../components/blog-post/AuthorBox.astro';
+import RelatedPosts from '../../../components/blog-post/RelatedPosts.astro';
+import BlogCTA from '../../../components/blog-post/BlogCTA.astro';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en', id: 'responsive-web-design-bootstrap' } },
+    { params: { lang: 'en', id: 'customer-persona' } },
+    { params: { lang: 'en', id: 'mobile-optimization' } },
+    { params: { lang: 'en', id: 'seo-vs-ppc' } },
+    { params: { lang: 'en', id: 'integrated-digital-marketing' } },
+    { params: { lang: 'en', id: 'custom-chatbot' } },
+    { params: { lang: 'en', id: 'website-traffic' } },
+    { params: { lang: 'en', id: 'ai-digital-marketing' } },
+    { params: { lang: 'en', id: 'ai-chatbot-business' } },
+    { params: { lang: 'zh', id: 'responsive-web-design-bootstrap' } },
+    { params: { lang: 'zh', id: 'customer-persona' } },
+    { params: { lang: 'zh', id: 'mobile-optimization' } },
+    { params: { lang: 'zh', id: 'seo-vs-ppc' } },
+    { params: { lang: 'zh', id: 'integrated-digital-marketing' } },
+    { params: { lang: 'zh', id: 'custom-chatbot' } },
+    { params: { lang: 'zh', id: 'website-traffic' } },
+    { params: { lang: 'zh', id: 'ai-digital-marketing' } },
+    { params: { lang: 'zh', id: 'ai-chatbot-business' } },
+  ];
+}
+
+const { lang, id } = Astro.params;
+
+// Find the blog post
+const posts = blogPosts[lang as keyof typeof blogPosts];
+const post = posts.find((p) => p.id === id);
+
+// If post not found, show 404
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+// Generate sample content
+const generateContent = () => `
+  <h2 id="introduction">Introduction</h2>
+  <p>${post.excerpt}</p>
+  <p>In today's fast-paced digital landscape, staying ahead of the competition requires a deep understanding of the latest trends and best practices. This comprehensive guide will walk you through everything you need to know.</p>
+
+  <h2 id="key-concepts">Key Concepts</h2>
+  <p>Before diving into the implementation details, it's essential to understand the fundamental concepts that drive success in this area.</p>
+
+  <h3 id="understanding-the-basics">Understanding the Basics</h3>
+  <p>The foundation of any successful strategy starts with a solid understanding of the basics. These core principles form the building blocks upon which more advanced techniques are built.</p>
+
+  <h3 id="why-it-matters">Why It Matters</h3>
+  <p>Implementing these strategies is not just about following trends—it's about creating sustainable growth and delivering real value to your audience.</p>
+
+  <blockquote>"The best time to start was yesterday. The second best time is now."</blockquote>
+
+  <h2 id="practical-steps">Practical Steps</h2>
+  <p>Now that we understand the concepts, let's dive into the practical steps you can take to implement these strategies effectively.</p>
+
+  <ul>
+    <li><strong>Assess Your Current Situation:</strong> Start by evaluating where you stand today and identify areas for improvement.</li>
+    <li><strong>Set Clear Goals:</strong> Define specific, measurable objectives that align with your business goals.</li>
+    <li><strong>Develop a Strategy:</strong> Create a detailed plan that outlines your approach and timeline.</li>
+    <li><strong>Implement and Monitor:</strong> Execute your plan and continuously monitor performance metrics.</li>
+    <li><strong>Optimize and Iterate:</strong> Use data-driven insights to refine and improve your approach.</li>
+  </ul>
+
+  <h2 id="best-practices">Best Practices</h2>
+  <p>Following industry best practices can significantly improve your results and help you avoid common pitfalls.</p>
+
+  <ol>
+    <li>Always prioritize user experience and accessibility</li>
+    <li>Test thoroughly before making significant changes</li>
+    <li>Keep your strategy flexible and adaptable</li>
+    <li>Stay updated with the latest industry trends</li>
+    <li>Learn from both successes and failures</li>
+  </ol>
+
+  <h2 id="common-challenges">Common Challenges</h2>
+  <p>Every journey comes with obstacles. Here are some common challenges you might face and how to overcome them.</p>
+
+  <h3 id="challenge-1">Challenge 1: Limited Resources</h3>
+  <p>Many businesses struggle with limited budgets and personnel. The key is to prioritize initiatives that offer the highest return on investment.</p>
+
+  <h3 id="challenge-2">Challenge 2: Resistance to Change</h3>
+  <p>Change can be difficult, especially for established teams. Focus on clear communication and demonstrate the benefits of new approaches.</p>
+
+  <h2 id="conclusion">Conclusion</h2>
+  <p>Mastering this area requires dedication, continuous learning, and a willingness to adapt to new challenges. By following the strategies and best practices outlined in this guide, you'll be well-equipped to achieve your goals and drive sustainable growth for your business.</p>
+
+  <p>Remember that success is a journey, not a destination. Stay curious, keep experimenting, and never stop learning.</p>
+`;
+
+// Generate table of contents
+const headings = [
+  { text: 'Introduction', id: 'introduction', level: 2 },
+  { text: 'Key Concepts', id: 'key-concepts', level: 2 },
+  { text: 'Understanding the Basics', id: 'understanding-the-basics', level: 3 },
+  { text: 'Why It Matters', id: 'why-it-matters', level: 3 },
+  { text: 'Practical Steps', id: 'practical-steps', level: 2 },
+  { text: 'Best Practices', id: 'best-practices', level: 2 },
+  { text: 'Common Challenges', id: 'common-challenges', level: 2 },
+  { text: 'Challenge 1: Limited Resources', id: 'challenge-1', level: 3 },
+  { text: 'Challenge 2: Resistance to Change', id: 'challenge-2', level: 3 },
+  { text: 'Conclusion', id: 'conclusion', level: 2 },
+];
+
+// Get related posts (exclude current post)
+const relatedPosts = posts
+  .filter((p) => p.id !== id)
+  .slice(0, 3)
+  .map((p) => ({
+    id: p.id,
+    title: p.title,
+    excerpt: p.excerpt,
+    image: p.image,
+  }));
+
+// Get author info
+const authorName = 'Sarah Johnson';
+
+const blogUrl = `${Astro.site?.origin || ''}/blog/${post.id}`;
+---
+
+<Layout
+  title={`${post.title} - Aivio Digital`}
+  lang={lang}
+  currentLang={lang as 'en' | 'zh'}
+  currentPath={`/blog/${id}`}
+>
+  <BlogHeader
+    title={post.title}
+    category={post.category}
+    date={post.date}
+    readTime="5 min read"
+  />
+
+  <FeaturedImage
+    alt={post.title}
+  />
+
+  <TableOfContents headings={headings} />
+
+  <section class="article-wrapper">
+    <div class="container">
+      <div class="article-layout">
+        <div class="main-content">
+          <BlogContent content={generateContent()} />
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">Share This Article</h4>
+            <ShareButtons url={blogUrl} title={post.title} />
+          </div>
+
+          <div class="sidebar-section">
+            <h4 class="sidebar-title">About the Author</h4>
+            <AuthorBox
+              name={authorName}
+              role="Digital Marketing Expert"
+              bio="Passionate about helping businesses grow through innovative digital strategies and data-driven decisions."
+            />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <RelatedPosts posts={relatedPosts} title="Related Articles" />
+
+  <BlogCTA />
+</Layout>
+
+<style>
+  .article-wrapper {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .main-content {
+    min-width: 0;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 20px;
+  }
+
+  .sidebar-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  @media (max-width: 1024px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .article-wrapper {
+      padding: 40px 0;
+    }
+  }
+</style>
