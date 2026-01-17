@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  badgeColor?: 'primary' | 'secondary';
+  items: string[];
+  note?: string;
+}
+
+const { title, subtitle, badge, badgeColor = 'primary', items, note } = Astro.props;
+const badgeBgClass = badgeColor === 'primary' ? 'bg-primary' : 'bg-secondary';
+const borderClass = badgeColor === 'primary' ? 'border-primary/20 hover:border-primary/40' : 'border-secondary/20 hover:border-secondary/40';
+const bgClass = badgeColor === 'primary' ? 'from-primary/5' : 'from-secondary/5';
+const checkColorClass = badgeColor === 'primary' ? 'text-primary' : 'text-secondary';
+const noteBgClass = badgeColor === 'primary' ? 'bg-primary/10' : '';
+---
+
+<div class={`bg-gradient-to-br ${bgClass} to-white p-8 rounded-2xl border-2 ${borderClass} transition-all duration-300`}>
+  {badge && (
+    <div class={`${badgeBgClass} text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-6`}>
+      {badge}
+    </div>
+  )}
+  <h3 class="text-2xl font-bold text-gray-900 mb-3">
+    {title}
+  </h3>
+  {subtitle && (
+    <p class="text-lg text-gray-600 mb-6">
+      {subtitle}
+    </p>
+  )}
+  <h4 class="text-lg font-semibold text-gray-900 mb-4">
+    Includes:
+  </h4>
+  <ul class="space-y-3 mb-8">
+    {items.map((item) => (
+      <li class="flex items-start gap-3">
+        <svg class={`w-5 h-5 ${checkColorClass} mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <span class="text-gray-700">{item}</span>
+      </li>
+    ))}
+  </ul>
+  {note && (
+    <div class={`${noteBgClass} p-4 rounded-lg`}>
+      <p class="text-sm text-gray-600 italic">
+        {note}
+      </p>
+    </div>
+  )}
+</div>
