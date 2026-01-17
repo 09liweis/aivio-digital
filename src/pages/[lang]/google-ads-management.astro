@@ -11,6 +11,57 @@ const pageTitle = t.pageTitle.googleAdsManagement;
 const pageMeta = t.pageMeta.googleAdsManagement;
 const content = t.googleAdsManagement;
 
+const whyWorkItems = [
+  {
+    icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
+    title: content.whyWorkWithUs.management.title,
+    description: content.whyWorkWithUs.management.description,
+  },
+  {
+    icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+    title: content.whyWorkWithUs.strategy.title,
+    description: content.whyWorkWithUs.strategy.description,
+  },
+  {
+    icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+    title: content.whyWorkWithUs.conversion.title,
+    description: content.whyWorkWithUs.conversion.description,
+  },
+  {
+    icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
+    title: content.whyWorkWithUs.reporting.title,
+    description: content.whyWorkWithUs.reporting.description,
+  },
+];
+
+const howWeManageItems = [
+  {
+    icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z',
+    title: content.howWeManage.structure.title,
+    description: content.howWeManage.structure.description,
+  },
+  {
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 1v8m0 1v8m0 1v8m0 1v8',
+    title: content.howWeManage.bidding.title,
+    description: content.howWeManage.bidding.description,
+  },
+  {
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
+    title: content.howWeManage.adCopy.title,
+    description: content.howWeManage.adCopy.description,
+  },
+  {
+    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+    title: content.howWeManage.monitoring.title,
+    description: content.howWeManage.monitoring.description,
+  },
+  {
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    title: content.howWeManage.optimization.title,
+    description: content.howWeManage.optimization.description,
+  },
+];
+
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' } },
@@ -21,243 +72,237 @@ export function getStaticPaths() {
 
 <Layout title={pageTitle} description={pageMeta.description} keywords={pageMeta.keywords} lang={currentLang} currentLang={currentLang} currentPath={currentPath}>
   <main class="min-h-screen">
-    <Hero title={content.hero.title} subtitle={content.hero.subtitle} description={content.hero.description} />
-
-    <!-- Hero Image -->
-    <section class="px-4 bg-white pb-12">
-      <div class="max-w-4xl mx-auto">
-        <img
-          src="/assets/google.png"
-          alt="Google Ads Management"
-          class="w-full h-auto rounded-lg shadow-lg"
-        />
-      </div>
-    </section>
+    <Hero
+      title={content.hero.title}
+      subtitle={content.hero.subtitle}
+      description={content.hero.description}
+      image="/assets/google_ads_management.png"
+    />
 
     <!-- Why Work With Us -->
-    <section class="py-16 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          {content.whyWorkWithUs.title}
-        </h2>
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.whyWorkWithUs.title}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We're different because we focus on what actually works for your business
+          </p>
+        </div>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-secondary/10 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whyWorkWithUs.management.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.whyWorkWithUs.management.description}
-            </p>
-          </div>
-          <div class="bg-secondary/10 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whyWorkWithUs.strategy.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.whyWorkWithUs.strategy.description}
-            </p>
-          </div>
-          <div class="bg-secondary/10 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whyWorkWithUs.conversion.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.whyWorkWithUs.conversion.description}
-            </p>
-          </div>
-          <div class="bg-secondary/10 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whyWorkWithUs.reporting.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.whyWorkWithUs.reporting.description}
-            </p>
-          </div>
+          {whyWorkItems.map((item) => (
+            <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                {item.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
     <!-- How We Manage -->
-    <section class="py-16 px-4 bg-gray-50">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          {content.howWeManage.title}
-        </h2>
-        <div class="space-y-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {content.howWeManage.structure.title}
+    <section class="py-20 px-4 bg-gradient-to-br from-primary/5 to-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.howWeManage.title}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            A systematic approach to managing your campaigns
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {howWeManageItems.map((item) => (
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+                </svg>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-3">
+                {item.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Structure -->
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Clear Pricing Structure
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Two options depending on where you are in your Google Ads journey
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- One-Time Setup -->
+          <div class="bg-gradient-to-br from-primary/5 to-white p-8 rounded-2xl border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
+            <div class="bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-6">
+              For New Accounts
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              {content.oneTimeSetup.title}
             </h3>
-            <p class="text-gray-700">
-              {content.howWeManage.structure.description}
+            <p class="text-lg text-gray-600 mb-6">
+              {content.oneTimeSetup.description}
             </p>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              {content.oneTimeSetup.includesTitle}
+            </h4>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point1}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point2}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point3}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point4}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point5}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.oneTimeSetup.point6}</span>
+              </li>
+            </ul>
+            <div class="bg-primary/10 p-4 rounded-lg">
+              <p class="text-sm text-gray-600 italic">
+                {content.oneTimeSetup.note}
+              </p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {content.howWeManage.bidding.title}
+
+          <!-- Ongoing Management -->
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-2xl border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300">
+            <div class="bg-secondary text-white text-sm font-semibold px-4 py-1 rounded-full inline-block mb-6">
+              Monthly Service
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">
+              {content.ongoingManagement.title}
             </h3>
-            <p class="text-gray-700">
-              {content.howWeManage.bidding.description}
+            <p class="text-lg text-gray-600 mb-6">
+              {content.ongoingManagement.description}
             </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {content.howWeManage.adCopy.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.howWeManage.adCopy.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {content.howWeManage.monitoring.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.howWeManage.monitoring.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">
-              {content.howWeManage.optimization.title}
-            </h3>
-            <p class="text-gray-700">
-              {content.howWeManage.optimization.description}
-            </p>
+            <h4 class="text-lg font-semibold text-gray-900 mb-4">
+              {content.ongoingManagement.includesTitle}
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.ongoingManagement.point1}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.ongoingManagement.point2}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.ongoingManagement.point3}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.ongoingManagement.point4}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{content.ongoingManagement.point5}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- One-Time Setup -->
-    <section class="py-16 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-          {content.oneTimeSetup.title}
-        </h2>
-        <p class="text-lg text-secondary font-semibold mb-4 text-center">
-          {content.oneTimeSetup.subtitle}
-        </p>
-        <p class="text-gray-700 mb-8 text-center">
-          {content.oneTimeSetup.description}
-        </p>
-        <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">
-          {content.oneTimeSetup.includesTitle}
-        </h3>
-        <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point4}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point5}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.oneTimeSetup.point6}</span>
-          </li>
-        </ul>
-        <p class="text-lg text-gray-600 mt-8 text-center italic">
-          {content.oneTimeSetup.note}
-        </p>
-      </div>
-    </section>
-
-    <!-- Ongoing Management -->
-    <section class="py-16 px-4 bg-secondary/10">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-          {content.ongoingManagement.title}
-        </h2>
-        <p class="text-lg text-secondary font-semibold mb-4 text-center">
-          {content.ongoingManagement.subtitle}
-        </p>
-        <p class="text-gray-700 mb-8 text-center">
-          {content.ongoingManagement.description}
-        </p>
-        <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">
-          {content.ongoingManagement.includesTitle}
-        </h3>
-        <ul class="space-y-3 text-gray-700 max-w-2xl mx-auto">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.ongoingManagement.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.ongoingManagement.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.ongoingManagement.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.ongoingManagement.point4}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.ongoingManagement.point5}</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
     <!-- Best Fit For -->
-    <section class="py-16 px-4 bg-white">
+    <section class="py-20 px-4 bg-gradient-to-br from-secondary/5 to-gray-50">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {content.bestFitFor.title}
-        </h2>
-        <ul class="space-y-4 text-gray-700 max-w-2xl mx-auto">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point4}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point5}</span>
-          </li>
-        </ul>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.bestFitFor.title}
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-xl border-l-4 border-secondary">
+            <p class="text-gray-700">{content.bestFitFor.point1}</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border-l-4 border-secondary">
+            <p class="text-gray-700">{content.bestFitFor.point2}</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border-l-4 border-secondary">
+            <p class="text-gray-700">{content.bestFitFor.point3}</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border-l-4 border-secondary">
+            <p class="text-gray-700">{content.bestFitFor.point4}</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border-l-4 border-secondary md:col-span-2">
+            <p class="text-gray-700">{content.bestFitFor.point5}</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Not Sure Where to Start -->
-    <section class="py-16 px-4 bg-gray-50">
+    <!-- Not Sure CTA -->
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primaryDark">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondaryDark">
           {content.notSure.title}
         </h2>
-        <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+        <p class="text-xl text-secondaryDark/40 mb-8 max-w-2xl mx-auto">
           {content.notSure.description}
         </p>
         <a
           href={`mailto:hello@aivio.digital?subject=Google Ads Audit Request`}
-          class="inline-block bg-secondary text-white font-semibold px-8 py-4 rounded-lg hover:bg-secondaryDark transition-colors text-lg shadow-md hover:shadow-lg"
+          class="inline-block bg-white text-secondary font-semibold px-10 py-4 rounded-lg hover:bg-secondary/10 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
         >
           {content.notSure.button}
         </a>
@@ -265,75 +310,77 @@ export function getStaticPaths() {
     </section>
 
     <!-- FAQ -->
-    <section class="py-16 px-4 bg-white">
+    <section class="py-20 px-4 bg-white">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          {content.faq.title}
-        </h2>
-        <div class="space-y-6">
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.faq.title}
+          </h2>
+        </div>
+        <div class="space-y-4">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q1.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q1.answer}
             </p>
           </details>
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q2.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q2.answer}
             </p>
           </details>
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q3.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q3.answer}
             </p>
           </details>
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q4.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q4.answer}
             </p>
           </details>
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q5.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q5.answer}
             </p>
           </details>
-          <details class="bg-gray-50 rounded-lg p-6 cursor-pointer">
+          <details class="bg-gradient-to-r from-gray-50 to-white rounded-xl p-6 cursor-pointer border border-gray-200 hover:border-secondary/30 transition-all">
             <summary class="text-lg font-semibold text-gray-900 flex justify-between items-center">
               {content.faq.q6.question}
-              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-secondary flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </summary>
-            <p class="mt-4 text-gray-700">
+            <p class="mt-4 text-gray-600 leading-relaxed">
               {content.faq.q6.answer}
             </p>
           </details>
