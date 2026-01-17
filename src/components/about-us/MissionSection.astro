@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section class="py-20 px-4 bg-gradient-to-br from-primary/5 to-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-block bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold px-4 py-2 rounded-full mb-6">
+        Our Mission
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {title}
+      </h2>
+    </div>
+    <div class="bg-white p-10 rounded-2xl shadow-xl border-2 border-primary/10">
+      <p class="text-xl text-gray-700 leading-relaxed text-center">
+        {description}
+      </p>
+    </div>
+  </div>
+</section>
