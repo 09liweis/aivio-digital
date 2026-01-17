@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { translations } from '../../i18n';
 import { blogPosts } from '../../i18n/blog';
 import Hero from '../../components/Hero.astro';
+import BlogGrid from '../../components/blogs/BlogGrid.astro';
 
 const { lang } = Astro.params;
 const currentLang = (lang || 'en') as 'en' | 'zh';
@@ -25,64 +26,16 @@ export function getStaticPaths() {
   <main class="min-h-screen">
     <Hero title={blogContent.title} description={blogContent.subtitle} />
 
-    <!-- Blog Posts Grid -->
-    <section class="py-16 px-4 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map(post => (
-            <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-              <!-- Image placeholder -->
-              <div class="h-48 bg-gradient-to-br from-primary to-secondaryDark flex items-center justify-center">
-                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                </svg>
-              </div>
-
-              <div class="p-6">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-xs font-semibold text-secondary bg-primary/20 px-2 py-1 rounded">
-                    {post.category}
-                  </span>
-                  <span class="text-xs text-gray-500">{post.date}</span>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                  {post.title}
-                </h2>
-
-                <p class="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                <a
-                  href={`/${currentLang === 'en' ? 'blogs' : 'blogs'}/${post.id}`}
-                  class="inline-flex items-center text-secondary font-semibold hover:text-secondaryDark transition"
-                >
-                  {blogContent.readMore}
-                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <BlogGrid
+      posts={posts}
+      currentLang={currentLang}
+      readMoreText={blogContent.readMore}
+    />
   </main>
 </Layout>
 
 <style>
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  main {
+    width: 100%;
   }
 </style>
