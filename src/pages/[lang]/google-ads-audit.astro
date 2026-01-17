@@ -11,6 +11,36 @@ const pageTitle = t.pageTitle.googleAdsAudit;
 const pageMeta = t.pageMeta.googleAdsAudit;
 const content = t.googleAdsAudit;
 
+const reviewItems = [
+  { key: 'structure', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z' },
+  { key: 'keywords', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+  { key: 'bidding', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 1v8m0 1v8m0 1v8m0 1v8' },
+  { key: 'adCopy', icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
+  { key: 'tracking', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+  { key: 'landingPage', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+];
+
+const receiveItems = [
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+];
+
+const bestFitItems = [
+  { icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 1v8m0 1v8m0 1v8m0 1v8' },
+  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
+];
+
+const afterAuditSteps = [
+  { step: '1', title: 'Implement Recommendations', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+  { step: '2', title: 'Continue Self-Management', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+  { step: '3', title: 'Partner with Us', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
+];
+
 export function getStaticPaths() {
   return [
     { params: { lang: 'en' } },
@@ -24,202 +54,274 @@ export function getStaticPaths() {
     <Hero title={content.hero.title} description={content.hero.subtitle} />
 
     <!-- Hero Image -->
-    <section class="px-4 bg-white pb-12">
-      <div class="max-w-4xl mx-auto">
+    <section class="px-4 bg-gradient-to-b from-white to-gray-50 pb-16">
+      <div class="max-w-5xl mx-auto">
         <img
           src="/assets/google_ads_audit.png"
           alt="Google Ads Audit"
-          class="w-full h-auto rounded-lg shadow-lg"
+          class="w-full h-auto rounded-2xl shadow-2xl"
         />
       </div>
     </section>
 
     <!-- Why Audit Matters -->
-    <section class="py-16 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
-          {content.whyAuditMatters.title}
-        </h2>
-        <p class="text-lg text-gray-600 mb-8 text-center">
-          {content.whyAuditMatters.subtitle}
-        </p>
-        <ul class="space-y-4 text-gray-700">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whyAuditMatters.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whyAuditMatters.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whyAuditMatters.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whyAuditMatters.point4}</span>
-          </li>
-        </ul>
-        <p class="text-lg text-gray-700 mt-8 italic text-center">
-          {content.whyAuditMatters.conclusion}
-        </p>
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.whyAuditMatters.title}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            {content.whyAuditMatters.subtitle}
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-xl border-l-4 border-secondary">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {content.whyAuditMatters.point1}
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-xl border-l-4 border-secondary">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {content.whyAuditMatters.point2}
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-xl border-l-4 border-secondary">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {content.whyAuditMatters.point3}
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 rounded-xl border-l-4 border-secondary">
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {content.whyAuditMatters.point4}
+            </p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-xl text-center">
+          <p class="text-xl font-medium text-secondaryDark italic">
+            {content.whyAuditMatters.conclusion}
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- What We Review -->
-    <section class="py-16 px-4 bg-gray-50">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          {content.whatWeReview.title}
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.structure.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.structure.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.keywords.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.keywords.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.bidding.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.bidding.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.adCopy.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.adCopy.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.tracking.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.tracking.description}
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">
-              {content.whatWeReview.landingPage.title}
-            </h3>
-            <p class="text-gray-600">
-              {content.whatWeReview.landingPage.description}
-            </p>
-          </div>
+    <section class="py-20 px-4 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.whatWeReview.title}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive review of every aspect of your Google Ads account
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reviewItems.map((item, index) => (
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group">
+              <div class="w-14 h-14 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                {content.whatWeReview[item.key as keyof typeof content.whatWeReview].title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {content.whatWeReview[item.key as keyof typeof content.whatWeReview].description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
     <!-- What You Receive -->
-    <section class="py-16 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {content.whatYouReceive.title}
-        </h2>
-        <ul class="space-y-4 text-gray-700">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whatYouReceive.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whatYouReceive.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whatYouReceive.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whatYouReceive.point4}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.whatYouReceive.point5}</span>
-          </li>
-        </ul>
-        <p class="text-lg text-gray-600 mt-8 text-center italic">
-          {content.whatYouReceive.note}
-        </p>
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.whatYouReceive.title}
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={receiveItems[0].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.whatYouReceive.point1}
+              </p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={receiveItems[1].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.whatYouReceive.point2}
+              </p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={receiveItems[2].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.whatYouReceive.point3}
+              </p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={receiveItems[3].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.whatYouReceive.point4}
+              </p>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border border-secondary/20 hover:border-secondary/40 transition-all md:col-span-2 lg:col-span-1">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={receiveItems[4].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.whatYouReceive.point5}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-xl text-center">
+          <p class="text-lg text-gray-600 italic">
+            {content.whatYouReceive.note}
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Best Fit For -->
-    <section class="py-16 px-4 bg-secondary/10">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-          {content.bestFitFor.title}
-        </h2>
-        <ul class="space-y-4 text-gray-700">
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point3}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-secondary mr-3 mt-1">·</span>
-            <span>{content.bestFitFor.point4}</span>
-          </li>
-        </ul>
+    <section class="py-20 px-4 bg-gradient-to-br from-secondary/5 to-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.bestFitFor.title}
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={bestFitItems[0].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.bestFitFor.point1}
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={bestFitItems[1].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.bestFitFor.point2}
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={bestFitItems[2].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.bestFitFor.point3}
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-secondary to-secondaryDark rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={bestFitItems[3].icon}></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed">
+                {content.bestFitFor.point4}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- What Happens After -->
-    <section class="py-16 px-4 bg-white">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
-          {content.afterAudit.title}
-        </h2>
-        <p class="text-lg text-gray-600 mb-8 text-center">
-          {content.afterAudit.subtitle}
-        </p>
-        <ol class="space-y-6 text-gray-700">
-          <li class="flex items-start">
-            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</span>
-            <span class="pt-1">{content.afterAudit.option1}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</span>
-            <span class="pt-1">{content.afterAudit.option2}</span>
-          </li>
-          <li class="flex items-start">
-            <span class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</span>
-            <span class="pt-1">{content.afterAudit.option3}</span>
-          </li>
-        </ol>
-        <p class="text-lg text-gray-600 mt-8 text-center italic">
-          {content.afterAudit.note}
-        </p>
+    <section class="py-20 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {content.afterAudit.title}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            {content.afterAudit.subtitle}
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {afterAuditSteps.map((step, index) => (
+            <div class="relative bg-gradient-to-br from-secondary/5 to-white p-8 rounded-xl border-2 border-secondary/20 hover:border-secondary transition-all duration-300">
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div class="w-10 h-10 bg-gradient-to-br from-secondary to-secondaryDark rounded-full flex items-center justify-center shadow-lg">
+                  <span class="text-white font-bold text-lg">{step.step}</span>
+                </div>
+              </div>
+              <div class="mt-8 mb-4">
+                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-3 text-center">
+                {step.title}
+              </h3>
+              <p class="text-gray-600 text-center leading-relaxed">
+                {content.afterAudit[`option${index + 1}` as keyof typeof content.afterAudit]}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-12 bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-xl text-center">
+          <p class="text-lg text-gray-600 italic">
+            {content.afterAudit.note}
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Ready CTA -->
-    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primaryDark text-white">
+    <section class="py-20 px-4 bg-gradient-to-br from-primary to-primaryDark">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-secondaryDark">
           {content.ready.title}
         </h2>
         <p class="text-xl text-secondaryDark/40 mb-8">
@@ -227,7 +329,7 @@ export function getStaticPaths() {
         </p>
         <a
           href={`mailto:hello@aivio.digital?subject=Google Ads Audit Request`}
-          class="inline-block bg-white text-secondary font-semibold px-8 py-4 rounded-lg hover:bg-secondary/10 transition-colors text-lg"
+          class="inline-block bg-white text-secondary font-semibold px-10 py-4 rounded-lg hover:bg-secondary/10 transition-all duration-300 text-lg shadow-lg hover:shadow-xl"
         >
           {content.ready.button}
         </a>
