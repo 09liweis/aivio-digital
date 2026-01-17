@@ -4,11 +4,12 @@ interface Props {
   subtitle?: string;
   description?: string;
   currentLang?: 'en' | 'zh';
+  image?: string;
 }
 
 import { translations } from '../i18n';
 
-const { title, subtitle, description, currentLang } = Astro.props;
+const { title, subtitle, description, currentLang, image } = Astro.props;
 
 // If currentLang is provided, use translations (for home page)
 const isHomePage = currentLang !== undefined;
@@ -16,6 +17,8 @@ const heroTitle = isHomePage ? translations[currentLang].hero.title : title!;
 const heroSubtitle = isHomePage ? translations[currentLang].hero.subtitle : subtitle;
 const heroDescription = isHomePage ? translations[currentLang].hero.subtitle : description;
 const heroCTA = isHomePage ? translations[currentLang].hero.cta : undefined;
+const heroImage = image || '/assets/google.png';
+const heroImageAlt = heroTitle || 'Google Ads Services';
 ---
 
 <section class="bg-gradient-to-br from-primary to-primaryDark py-16 md:py-20 px-4">
@@ -41,8 +44,8 @@ const heroCTA = isHomePage ? translations[currentLang].hero.cta : undefined;
       </div>
       <div class="order-1 md:order-2">
         <img
-          src="/assets/google.png"
-          alt="Google Ads Services"
+          src={heroImage}
+          alt={heroImageAlt}
           class="w-full h-auto rounded-lg shadow-xl"
         />
       </div>
