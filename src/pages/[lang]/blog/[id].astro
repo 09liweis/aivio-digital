@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { blogPosts } from '../../../i18n/blog';
+import { getBlogPostContent } from '../../../i18n/blog';
 import BlogHeader from '../../../components/blog-post/BlogHeader.astro';
 import FeaturedImage from '../../../components/blog-post/FeaturedImage.astro';
 import TableOfContents from '../../../components/blog-post/TableOfContents.astro';
@@ -37,7 +38,7 @@ export async function getStaticPaths() {
 
 const { lang, id } = Astro.params;
 
-// Find the blog post
+// Find the blog post metadata
 const posts = blogPosts[lang as keyof typeof blogPosts];
 const post = posts.find((p) => p.id === id);
 
@@ -46,73 +47,8 @@ if (!post) {
   return Astro.redirect('/404');
 }
 
-// Generate sample content
-const generateContent = () => `
-  <h2 id="introduction">Introduction</h2>
-  <p>${post.excerpt}</p>
-  <p>In today's fast-paced digital landscape, staying ahead of the competition requires a deep understanding of the latest trends and best practices. This comprehensive guide will walk you through everything you need to know.</p>
-
-  <h2 id="key-concepts">Key Concepts</h2>
-  <p>Before diving into the implementation details, it's essential to understand the fundamental concepts that drive success in this area.</p>
-
-  <h3 id="understanding-the-basics">Understanding the Basics</h3>
-  <p>The foundation of any successful strategy starts with a solid understanding of the basics. These core principles form the building blocks upon which more advanced techniques are built.</p>
-
-  <h3 id="why-it-matters">Why It Matters</h3>
-  <p>Implementing these strategies is not just about following trends—it's about creating sustainable growth and delivering real value to your audience.</p>
-
-  <blockquote>"The best time to start was yesterday. The second best time is now."</blockquote>
-
-  <h2 id="practical-steps">Practical Steps</h2>
-  <p>Now that we understand the concepts, let's dive into the practical steps you can take to implement these strategies effectively.</p>
-
-  <ul>
-    <li><strong>Assess Your Current Situation:</strong> Start by evaluating where you stand today and identify areas for improvement.</li>
-    <li><strong>Set Clear Goals:</strong> Define specific, measurable objectives that align with your business goals.</li>
-    <li><strong>Develop a Strategy:</strong> Create a detailed plan that outlines your approach and timeline.</li>
-    <li><strong>Implement and Monitor:</strong> Execute your plan and continuously monitor performance metrics.</li>
-    <li><strong>Optimize and Iterate:</strong> Use data-driven insights to refine and improve your approach.</li>
-  </ul>
-
-  <h2 id="best-practices">Best Practices</h2>
-  <p>Following industry best practices can significantly improve your results and help you avoid common pitfalls.</p>
-
-  <ol>
-    <li>Always prioritize user experience and accessibility</li>
-    <li>Test thoroughly before making significant changes</li>
-    <li>Keep your strategy flexible and adaptable</li>
-    <li>Stay updated with the latest industry trends</li>
-    <li>Learn from both successes and failures</li>
-  </ol>
-
-  <h2 id="common-challenges">Common Challenges</h2>
-  <p>Every journey comes with obstacles. Here are some common challenges you might face and how to overcome them.</p>
-
-  <h3 id="challenge-1">Challenge 1: Limited Resources</h3>
-  <p>Many businesses struggle with limited budgets and personnel. The key is to prioritize initiatives that offer the highest return on investment.</p>
-
-  <h3 id="challenge-2">Challenge 2: Resistance to Change</h3>
-  <p>Change can be difficult, especially for established teams. Focus on clear communication and demonstrate the benefits of new approaches.</p>
-
-  <h2 id="conclusion">Conclusion</h2>
-  <p>Mastering this area requires dedication, continuous learning, and a willingness to adapt to new challenges. By following the strategies and best practices outlined in this guide, you'll be well-equipped to achieve your goals and drive sustainable growth for your business.</p>
-
-  <p>Remember that success is a journey, not a destination. Stay curious, keep experimenting, and never stop learning.</p>
-`;
-
-// Generate table of contents
-const headings = [
-  { text: 'Introduction', id: 'introduction', level: 2 },
-  { text: 'Key Concepts', id: 'key-concepts', level: 2 },
-  { text: 'Understanding the Basics', id: 'understanding-the-basics', level: 3 },
-  { text: 'Why It Matters', id: 'why-it-matters', level: 3 },
-  { text: 'Practical Steps', id: 'practical-steps', level: 2 },
-  { text: 'Best Practices', id: 'best-practices', level: 2 },
-  { text: 'Common Challenges', id: 'common-challenges', level: 2 },
-  { text: 'Challenge 1: Limited Resources', id: 'challenge-1', level: 3 },
-  { text: 'Challenge 2: Resistance to Change', id: 'challenge-2', level: 3 },
-  { text: 'Conclusion', id: 'conclusion', level: 2 },
-];
+// Get full blog content from markdown file
+const blogContent = await getBlogPostContent(lang as 'en' | 'zh', id);
 
 // Get related posts (exclude current post)
 const relatedPosts = posts
@@ -126,9 +62,27 @@ const relatedPosts = posts
   }));
 
 // Get author info
-const authorName = 'Sarah Johnson';
+const authorName = blogContent?.metadata?.author || post.title || 'Sarah Johnson';
+const readTime = blogContent?.metadata?.readTime || '5 min read';
 
 const blogUrl = `${Astro.site?.origin || ''}/blog/${post.id}`;
+
+// Extract headings from content for table of contents
+const extractHeadings = (html: string) => {
+  const headingRegex = /<h([2-6])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h\1>/gi;
+  const headings: Array<{ text: string; id: string; level: number }> = [];
+  let match;
+  while ((match = headingRegex.exec(html)) !== null) {
+    headings.push({
+      text: match[3].replace(/<[^>]*>/g, ''),
+      id: match[2],
+      level: parseInt(match[1]),
+    });
+  }
+  return headings;
+};
+
+const headings = blogContent?.content ? extractHeadings(blogContent.content) : [];
 ---
 
 <Layout
@@ -141,7 +95,7 @@ const blogUrl = `${Astro.site?.origin || ''}/blog/${post.id}`;
     title={post.title}
     category={post.category}
     date={post.date}
-    readTime="5 min read"
+    readTime={readTime}
   />
 
   <FeaturedImage
@@ -154,7 +108,7 @@ const blogUrl = `${Astro.site?.origin || ''}/blog/${post.id}`;
     <div class="container">
       <div class="article-layout">
         <div class="main-content">
-          <BlogContent content={generateContent()} />
+          <BlogContent content={blogContent?.content || `<p>Content not found for this post.</p>`} />
         </div>
 
         <aside class="sidebar">

@@ -7,22 +7,14 @@ const { content } = Astro.props;
 ---
 
 <article class="blog-content">
-  <div class="container">
-    <div class="content-wrapper">
-      <div class="prose" set:html={content} />
-    </div>
+  <div class="content-wrapper">
+    <div class="prose" set:html={content} />
   </div>
 </article>
 
 <style>
   .blog-content {
-    padding: 80px 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .content-wrapper {
