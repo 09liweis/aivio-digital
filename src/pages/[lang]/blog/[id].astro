@@ -4,10 +4,10 @@ import { blogPosts } from '../../../i18n/blog';
 import { getBlogPostContent } from '../../../i18n/blog';
 import BlogHeader from '../../../components/blog-post/BlogHeader.astro';
 import FeaturedImage from '../../../components/blog-post/FeaturedImage.astro';
-import TableOfContents from '../../../components/blog-post/TableOfContents.astro';
 import BlogContent from '../../../components/blog-post/BlogContent.astro';
+import TableOfContentsInline from '../../../components/blog-post/TableOfContentsInline.astro';
 import ShareButtons from '../../../components/blog-post/ShareButtons.astro';
-import AuthorBox from '../../../components/blog-post/AuthorBox.astro';
+import AuthorBoxSidebar from '../../../components/blog-post/AuthorBoxSidebar.astro';
 import RelatedPosts from '../../../components/blog-post/RelatedPosts.astro';
 import BlogCTA from '../../../components/blog-post/BlogCTA.astro';
 
@@ -102,8 +102,6 @@ const headings = blogContent?.content ? extractHeadings(blogContent.content) : [
     alt={post.title}
   />
 
-  <TableOfContents headings={headings} />
-
   <section class="article-wrapper">
     <div class="container">
       <div class="article-layout">
@@ -113,13 +111,18 @@ const headings = blogContent?.content ? extractHeadings(blogContent.content) : [
 
         <aside class="sidebar">
           <div class="sidebar-section">
+            <h4 class="sidebar-title">Table of Contents</h4>
+            <TableOfContentsInline headings={headings} />
+          </div>
+
+          <div class="sidebar-section">
             <h4 class="sidebar-title">Share This Article</h4>
             <ShareButtons url={blogUrl} title={post.title} />
           </div>
 
           <div class="sidebar-section">
             <h4 class="sidebar-title">About the Author</h4>
-            <AuthorBox
+            <AuthorBoxSidebar
               name={authorName}
               role="Digital Marketing Expert"
               bio="Passionate about helping businesses grow through innovative digital strategies and data-driven decisions."

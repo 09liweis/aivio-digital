@@ -1,6 +1,7 @@
 ---
 title: "How to Create Responsive Web Design Using Bootstrap"
 author: "Sarah Johnson"
+role: "Web Developer"
 readTime: "5 min read"
 ---
 
@@ -117,6 +118,6 @@ Bootstrap makes responsive web design accessible to developers of all skill leve
 
 Remember that responsive design is not just about making things fit on smaller screens—it's about creating intuitive, accessible experiences that work seamlessly wherever your users are.
 
-> "The best responsive design is the one your users don't even notice—they simply enjoy using your site regardless of the device they're using."
+> "The best responsive design is one your users don't even notice—they simply enjoy using your site regardless of the device they're using."
 
 Start with Bootstrap's responsive features today and transform your web presence into one that truly serves all your users.

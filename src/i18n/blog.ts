@@ -167,7 +167,7 @@ export async function getBlogPostContent(lang: 'en' | 'zh', id: string) {
       // Parse simple frontmatter
       const metadata: any = {};
       const frontmatterLines = frontmatterText.split('\n');
-      frontmatterLines.forEach(line => {
+      frontmatterLines.forEach((line: string) => {
         const match = line.match(/^(\w+):\s*"?(.*?)"?$/);
         if (match) {
           metadata[match[1]] = match[2];

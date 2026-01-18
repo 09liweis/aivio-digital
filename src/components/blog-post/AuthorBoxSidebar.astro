@@ -1,0 +1,91 @@
+---
+interface Props {
+  name: string;
+  role?: string;
+  bio?: string;
+}
+
+const { name, role = 'Digital Marketing Expert', bio } = Astro.props;
+---
+
+<div class="author-sidebar">
+  <div class="author-avatar">
+    <span class="author-initial">{name.charAt(0)}</span>
+  </div>
+  <div class="author-info">
+    <h4 class="author-name">{name}</h4>
+    <p class="author-role">{role}</p>
+    {bio && <p class="author-bio">{bio}</p>}
+  </div>
+</div>
+
+<style>
+  .author-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+    margin-bottom: 16px;
+  }
+
+  .author-initial {
+    color: white;
+  }
+
+  .author-info {
+    width: 100%;
+  }
+
+  .author-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px;
+  }
+
+  .author-role {
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  .author-bio {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .author-sidebar {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .author-avatar {
+      margin-bottom: 0;
+      margin-right: 16px;
+      min-width: 64px;
+    }
+
+    .author-name {
+      font-size: 16px;
+    }
+  }
+</style>
