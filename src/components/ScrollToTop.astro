@@ -1,0 +1,110 @@
+---
+interface Props {
+  threshold?: number;
+}
+
+const { threshold = 300 } = Astro.props;
+---
+
+<div id="scroll-to-top" class="scroll-to-top">
+  <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</div>
+
+<script define:vars={{ threshold }}>
+  const button = document.getElementById('scroll-to-top');
+  let lastScrollTop = 0;
+  let ticking = false;
+
+  const toggleButton = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > threshold) {
+      button.classList.add('visible');
+    } else {
+      button.classList.remove('visible');
+    }
+    lastScrollTop = scrollTop;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        toggleButton();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  button.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+<style>
+  .scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    z-index: 9999;
+  }
+
+  .scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.5);
+  }
+
+  .scroll-to-top:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  .arrow-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: transform 0.3s;
+  }
+
+  .scroll-to-top:hover .arrow-icon {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 640px) {
+    .scroll-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .arrow-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
