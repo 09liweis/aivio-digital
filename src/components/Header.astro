@@ -38,8 +38,9 @@ const isActive = (href: string) => {
       <a href={getMenuLink('', currentLang)} class="flex items-center gap-2 text-2xl font-bold text-secondary hover:text-secondaryDark transition">
         <img src="/assets/logo.png" alt="Aivio Digital" class="h-20 w-auto" />
       </a>
-      
-      <ul class="flex items-center gap-1">
+
+      <!-- Desktop Menu -->
+      <ul class="hidden lg:flex items-center gap-1">
         {menuItems.map(item => (
           <li>
             <a
@@ -56,7 +57,8 @@ const isActive = (href: string) => {
         ))}
       </ul>
 
-      <div class="flex items-center gap-3">
+      <!-- Desktop Controls -->
+      <div class="hidden lg:flex items-center gap-3">
         <div class="flex gap-1 items-center bg-gray-100 rounded-md p-1">
           {Object.entries(languages).map(([code, name]) => (
             <button
@@ -77,9 +79,71 @@ const isActive = (href: string) => {
           {t.nav.getAudit}
         </a>
       </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+        aria-label="Toggle menu"
+        onclick="toggleMobileMenu()"
+      >
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu lg:hidden">
+      <ul class="flex flex-col gap-2 mt-4">
+        {menuItems.map(item => (
+          <li>
+            <a
+              href={item.href}
+              class={`block px-4 py-3 rounded-lg font-medium text-sm transition border-l-4 ${
+                isActive(item.href)
+                  ? 'text-secondary bg-secondary/5 border-secondary'
+                  : 'text-gray-700 border-transparent hover:text-secondary hover:bg-gray-50'
+              }`}
+              onclick="closeMobileMenu()"
+            >
+              {t.nav[item.key as keyof typeof t.nav]}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex flex-col gap-4 mt-6 pt-6 border-t border-gray-200">
+        <div class="flex gap-1 items-center bg-gray-100 rounded-md p-1">
+          {Object.entries(languages).map(([code, name]) => (
+            <button
+              data-lang={code}
+              class={`flex-1 px-3 py-2 rounded text-sm font-medium transition ${
+                currentLang === code
+                  ? 'bg-white text-secondary shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              onclick={`switchLanguage('${code}'); closeMobileMenu();`}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+
+        <a
+          href={getMenuLink('contact', currentLang)}
+          class="bg-secondary text-white font-semibold py-3 px-5 rounded-lg hover:bg-secondaryDark transition text-sm shadow-md hover:shadow-lg text-center"
+          onclick="closeMobileMenu()"
+        >
+          {t.nav.getAudit}
+        </a>
+      </div>
     </div>
   </nav>
 </header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
 
 <script>
   function switchLanguage(lang: string) {
@@ -87,14 +151,72 @@ const isActive = (href: string) => {
     const newPath = lang === 'en' ? '/' : `/${lang}`;
     window.location.href = newPath;
   }
-  
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const body = document.body;
+
+    if (menu && overlay) {
+      if (menu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        menu.classList.add('open');
+        overlay.classList.add('open');
+        body.style.overflow = 'hidden';
+      }
+    }
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const body = document.body;
+
+    if (menu && overlay) {
+      menu.classList.remove('open');
+      overlay.classList.remove('open');
+      body.style.overflow = '';
+    }
+  }
+
   // Expose to window for onclick handlers
   (window as any).switchLanguage = switchLanguage;
+  (window as any).toggleMobileMenu = toggleMobileMenu;
+  (window as any).closeMobileMenu = closeMobileMenu;
 </script>
 
 <style>
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .mobile-menu.open {
+    max-height: 500px;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 40;
+  }
+
+  .mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
   }
 </style>
